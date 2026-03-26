@@ -1,0 +1,26 @@
+---
+title: "Pig vs Human Genome Comparison"
+subtitle: "Group 8 - BNFO 420"
+---
+
+## One-paragraph summary
+Write 4–6 sentences describing:
+- the problem or question
+- the dataset(s)
+- your approach (methods)
+- what you will deliver (figures, model, dashboard, etc.)
+
+## Project roadmap (living)
+- [ ] Find dataset(s)
+- [ ] Define outcome + predictors / variables
+- [ ] Exploratory analysis + QC
+- [ ] Method 1 (required)
+- [ ] Method 2 (optional/extension)
+- [ ] Final figures + interpretation
+- [ ] Limitations + ethics + reproducibility notes
+
+## Where to find things
+- **Scripts:** `scripts/`
+- **Data notes:** `data/README.md`
+- **Figures:** `figures/`
+- **Citations:** `references.bib`
