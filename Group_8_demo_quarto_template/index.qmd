@@ -1,6 +1,6 @@
 ---
 title: "Pig vs Human Genome Comparison"
-subtitle: "Group 8 - BNFO 420"
+subtitle: "BNFO 420 - Group 8"
 ---
 
 ## One-paragraph summary
