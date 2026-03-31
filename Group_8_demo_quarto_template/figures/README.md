@@ -5,8 +5,8 @@ library(readxl)
 library(pheatmap)
 library(dplyr)
 
-data <- read_excel("C:/Users/sravy_zbboaem/Downloads/GSE61271_gene_names_and_GSM_headers.xlsx")
-data <- as.data.frame(data)
+data <- read_excel("data/GSE61271_gene_names_and_GSM_headers.xlsx")
+metadata <- read.csv("data/GSE61271_sample_metadata.csv")
 
 data$Gene <- as.character(data$Gene)
 data$Gene[is.na(data$Gene) | data$Gene == ""] <- paste0("Unknown_", which(is.na(data$Gene) | data$Gene == ""))
