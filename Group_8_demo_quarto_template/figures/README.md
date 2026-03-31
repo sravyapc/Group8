@@ -1,6 +1,6 @@
 # Figures
 
-````{r}`
+```{r}
 
 install.packages("readxl")
 install.packages("pheatmap")
@@ -59,7 +59,7 @@ pheatmap(
   main = "Top 50 Most Variable Genes"
 )
 
-```` `
+```
 
 Export final figures here (png/pdf/svg).  
 Use consistent names, e.g.:
