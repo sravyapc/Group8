@@ -1,18 +1,12 @@
 # Figures
 
 ```{r}
-
-install.packages("readxl")
-install.packages("pheatmap")
-
 library(readxl)
 library(pheatmap)
 library(dplyr)
 
-
 data <- read_excel("C:/Users/sravy_zbboaem/Downloads/GSE61271_gene_names_and_GSM_headers.xlsx")
 data <- as.data.frame(data)
-
 
 data$Gene <- as.character(data$Gene)
 data$Gene[is.na(data$Gene) | data$Gene == ""] <- paste0("Unknown_", which(is.na(data$Gene) | data$Gene == ""))
@@ -25,7 +19,6 @@ data$Gene <- NULL
 data$Gene_name <- NULL
 
 data[] <- lapply(data, function(x) as.numeric(as.character(x)))
-
 data <- data[complete.cases(data), ]
 
 row_var <- apply(data, 1, var, na.rm = TRUE)
@@ -36,16 +29,13 @@ top_genes <- names(sort(gene_variance, decreasing = TRUE))[1:50]
 heatmap_data <- data[top_genes, ]
 
 metadata <- read.csv("C:/Users/sravy_zbboaem/Downloads/GSE61271_sample_metadata.csv")
-
 metadata2 <- metadata[match(colnames(heatmap_data), metadata$geo_accession), ]
 
 annotation_col <- data.frame(
   BiologicalState = metadata2$biological_state,
   Sex = metadata2$Sex
 )
-
 rownames(annotation_col) <- colnames(heatmap_data)
-
 
 pheatmap(
   as.matrix(heatmap_data),
@@ -56,7 +46,10 @@ pheatmap(
   show_colnames = TRUE,
   angle_col = 45,
   fontsize_col = 7,
-  main = "Top 50 Most Variable Genes"
+  main = "Top 50 Most Variable Genes",
+  filename = "fig01_top50_heatmap.png",
+  width = 10,
+  height = 8
 )
 
 ```
