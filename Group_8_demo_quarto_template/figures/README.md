@@ -2,8 +2,8 @@
 
 ```{r}
 library(readxl)
-library(pheatmap)
 library(dplyr)
+library(plotly)
 
 data <- read_excel("data/GSE61271_gene_names_and_GSM_headers.xlsx")
 metadata <- read.csv("data/GSE61271_sample_metadata.csv")
@@ -28,29 +28,42 @@ gene_variance <- apply(data, 1, var, na.rm = TRUE)
 top_genes <- names(sort(gene_variance, decreasing = TRUE))[1:50]
 heatmap_data <- data[top_genes, ]
 
-metadata <- read.csv("C:/Users/sravy_zbboaem/Downloads/GSE61271_sample_metadata.csv")
 metadata2 <- metadata[match(colnames(heatmap_data), metadata$geo_accession), ]
 
-annotation_col <- data.frame(
-  BiologicalState = metadata2$biological_state,
-  Sex = metadata2$Sex
-)
-rownames(annotation_col) <- colnames(heatmap_data)
+# row scaling like pheatmap(scale = "row")
+heatmap_scaled <- t(scale(t(as.matrix(heatmap_data))))
 
-pheatmap(
-  as.matrix(heatmap_data),
-  scale = "row",
-  cluster_rows = TRUE,
-  cluster_cols = TRUE,
-  annotation_col = annotation_col,
-  show_colnames = TRUE,
-  angle_col = 45,
-  fontsize_col = 7,
-  main = "Top 50 Most Variable Genes",
-  filename = "fig01_top50_heatmap.png",
-  width = 10,
-  height = 8
+# optional hover text
+hover_text <- matrix("", nrow = nrow(heatmap_scaled), ncol = ncol(heatmap_scaled))
+for (i in 1:nrow(heatmap_scaled)) {
+  for (j in 1:ncol(heatmap_scaled)) {
+    hover_text[i, j] <- paste0(
+      "Gene: ", rownames(heatmap_scaled)[i],
+      "<br>Sample: ", colnames(heatmap_scaled)[j],
+      "<br>Scaled Expression: ", round(heatmap_scaled[i, j], 2),
+      "<br>Biological State: ", metadata2$biological_state[j],
+      "<br>Sex: ", metadata2$Sex[j]
+    )
+  }
+}
+
+fig <- plot_ly(
+  x = colnames(heatmap_scaled),
+  y = rownames(heatmap_scaled),
+  z = heatmap_scaled,
+  type = "heatmap",
+  text = hover_text,
+  hoverinfo = "text"
 )
+
+fig <- fig %>%
+  layout(
+    title = "Top 50 Most Variable Genes",
+    xaxis = list(title = "Samples", tickangle = 45),
+    yaxis = list(title = "Genes")
+  )
+
+fig
 
 ```
 
