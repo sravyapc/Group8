@@ -10,6 +10,70 @@ Add figures as you generate them. Example:
 
 ```{r}
 # If using R, put code here (optional)
+library(readxl)
+library(dplyr)
+library(plotly)
 
+data <- read_excel("data/GSE61271_gene_names_and_GSM_headers.xlsx")
+metadata <- read.csv("data/GSE61271_sample_metadata.csv")
+
+data$Gene <- as.character(data$Gene)
+data$Gene[is.na(data$Gene) | data$Gene == ""] <- paste0("Unknown_", which(is.na(data$Gene) | data$Gene == ""))
+
+data <- data[!grepl("^ENSSSCG", data$Gene, ignore.case = TRUE), ]
+
+rownames(data) <- make.unique(data$Gene)
+
+data$Gene <- NULL
+data$Gene_name <- NULL
+
+data[] <- lapply(data, function(x) as.numeric(as.character(x)))
+data <- data[complete.cases(data), ]
+
+row_var <- apply(data, 1, var, na.rm = TRUE)
+data <- data[row_var > 0, ]
+
+gene_variance <- apply(data, 1, var, na.rm = TRUE)
+top_genes <- names(sort(gene_variance, decreasing = TRUE))[1:50]
+heatmap_data <- data[top_genes, ]
+
+metadata2 <- metadata[match(colnames(heatmap_data), metadata$geo_accession), ]
+
+# row scaling like pheatmap(scale = "row")
+heatmap_scaled <- t(scale(t(as.matrix(heatmap_data))))
+
+# optional hover text
+hover_text <- matrix("", nrow = nrow(heatmap_scaled), ncol = ncol(heatmap_scaled))
+for (i in 1:nrow(heatmap_scaled)) {
+  for (j in 1:ncol(heatmap_scaled)) {
+    hover_text[i, j] <- paste0(
+      "Gene: ", rownames(heatmap_scaled)[i],
+      "<br>Sample: ", colnames(heatmap_scaled)[j],
+      "<br>Scaled Expression: ", round(heatmap_scaled[i, j], 2),
+      "<br>Biological State: ", metadata2$biological_state[j],
+      "<br>Sex: ", metadata2$Sex[j]
+    )
+  }
+}
+
+fig <- plot_ly(
+  x = colnames(heatmap_scaled),
+  y = rownames(heatmap_scaled),
+  z = heatmap_scaled,
+  type = "heatmap",
+  text = hover_text,
+  hoverinfo = "text"
+)
+
+fig <- fig %>%
+  layout(
+    title = "Top 50 Most Variable Genes",
+    xaxis = list(title = "Samples", tickangle = 45),
+    yaxis = list(title = "Genes")
+  )
+
+fig
+
+```
 # If using Python, put code here (optional)
 

@@ -1,6 +1,6 @@
 # Figures
 
-```{r}``
+```{r}
 library(readxl)
 library(dplyr)
 library(plotly)
@@ -65,7 +65,7 @@ fig <- fig %>%
 
 fig
 
-``` ``
+```
 
 Export final figures here (png/pdf/svg).  
 Use consistent names, e.g.:
