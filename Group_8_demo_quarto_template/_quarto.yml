@@ -25,6 +25,7 @@ format:
     theme: cosmo
     toc: true
     number-sections: true
+    embed-resources: true
 
 execute:
   echo: true

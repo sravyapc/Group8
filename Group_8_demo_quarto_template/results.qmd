@@ -32,6 +32,9 @@ data <- data[complete.cases(data), ]
 row_var <- apply(data, 1, var, na.rm = TRUE)
 data <- data[row_var > 0, ]
 
+# Remove any rows with NA, NaN, or Inf
+data <- data[apply(data, 1, function(x) all(is.finite(x))), ]
+
 gene_variance <- apply(data, 1, var, na.rm = TRUE)
 top_genes <- names(sort(gene_variance, decreasing = TRUE))[1:50]
 heatmap_data <- data[top_genes, ]
@@ -55,7 +58,7 @@ pheatmap(
   angle_col = 45,
   fontsize_col = 7,
   main = "Top 50 Most Variable Genes",
-  filename = "fig01_top50_heatmap.png",
+  #filename = "fig01_top50_heatmap.png",
   width = 10,
   height = 8
 )
