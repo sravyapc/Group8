@@ -16,28 +16,51 @@ library(dplyr)
 data <- read_excel("data/GSE61271_gene_names_and_GSM_headers.xlsx")
 metadata <- read.csv("data/GSE61271_sample_metadata.csv")
 
+cat("1. Initial data rows:", nrow(data), "\n")
+cat("   Data columns:", ncol(data), "\n")
+
 data$Gene <- as.character(data$Gene)
 data$Gene[is.na(data$Gene) | data$Gene == ""] <- paste0("Unknown_", which(is.na(data$Gene) | data$Gene == ""))
 
 data <- data[!grepl("^ENSSSCG", data$Gene, ignore.case = TRUE), ]
+cat("2. After removing ENSSSCG rows:", nrow(data), "\n")
 
 rownames(data) <- make.unique(data$Gene)
 
 data$Gene <- NULL
 data$Gene_name <- NULL
 
+cat("3. Columns before numeric conversion:", ncol(data), "\n")
+
 data[] <- lapply(data, function(x) as.numeric(as.character(x)))
 data <- data[complete.cases(data), ]
+cat("4. After numeric conversion & removing NAs:", nrow(data), "rows\n")
 
+# Much less strict filtering - just keep everything with variance > 0
 row_var <- apply(data, 1, var, na.rm = TRUE)
+cat("5. Variance stats:\n")
+print(summary(row_var))
+
+# Keep genes with any positive variance
 data <- data[row_var > 0, ]
+cat("6. After variance > 0 filter:", nrow(data), "rows\n")
 
-# Remove any rows with NA, NaN, or Inf
-data <- data[apply(data, 1, function(x) all(is.finite(x))), ]
-
+# Get top genes by variance
 gene_variance <- apply(data, 1, var, na.rm = TRUE)
-top_genes <- names(sort(gene_variance, decreasing = TRUE))[1:50]
+n_genes <- min(50, nrow(data))
+cat("7. Top genes to select:", n_genes, "\n")
+
+if(n_genes < 2) {
+  cat("\n⚠️ WARNING: Only", n_genes, "genes available!\n")
+  cat("Showing all available genes.\n")
+  top_genes <- rownames(data)
+} else {
+  top_genes <- names(sort(gene_variance, decreasing = TRUE))[1:n_genes]
+}
+
 heatmap_data <- data[top_genes, ]
+cat("8. Final heatmap matrix:", nrow(heatmap_data), "genes x", ncol(heatmap_data), "samples\n")
+cat("   Matrix is finite:", all(is.finite(as.matrix(heatmap_data))), "\n")
 
 metadata2 <- metadata[match(colnames(heatmap_data), metadata$geo_accession), ]
 
@@ -48,21 +71,22 @@ annotation_col <- data.frame(
 
 rownames(annotation_col) <- colnames(heatmap_data)
 
+# Disable clustering if we have fewer than 2 genes/samples
+cluster_rows <- nrow(heatmap_data) >= 2
+cluster_cols <- ncol(heatmap_data) >= 2
+
+cat("9. Clustering - rows:", cluster_rows, ", cols:", cluster_cols, "\n")
+
 pheatmap(
   as.matrix(heatmap_data),
-  scale = "row",
-  cluster_rows = TRUE,
-  cluster_cols = TRUE,
+  scale = "none",
+  cluster_rows = cluster_rows,  # Disable if < 2 rows
+  cluster_cols = cluster_cols,  # Disable if < 2 cols
   annotation_col = annotation_col,
   show_colnames = TRUE,
   angle_col = 45,
   fontsize_col = 7,
   main = "Top 50 Most Variable Genes",
-  #filename = "fig01_top50_heatmap.png",
   width = 10,
   height = 8
 )
-
-```
-# If using Python, put code here (optional)
-

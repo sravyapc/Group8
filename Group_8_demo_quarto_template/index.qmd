@@ -5,8 +5,6 @@ subtitle: "BNFO 420 - Group 8"
 
 ## One-paragraph summary
 Write 4–6 sentences describing:
-- the problem or question
-- the dataset(s)
 - your approach (methods)
 - what you will deliver (figures, model, dashboard, etc.)
 - Obesity is a complex metabolic disorder characterized by excessive adipose tissue accumulation that extends beyond energy storage to include critical endocrine functions, such as secreting leptin to regulate appetite and metabolism. The progression from leanness to obesity involves dynamic changes in fat cell size, number, and inflammatory status, orchestrated by specific gene expression patterns. Our research consists of two main datasets: GSE61271 - RNA-Sequencing of lean, intermediate, and obese pigs. As well as, GSE162653 - RNA-seq analysis of human white adipose tissue from normal weight and obese individuals prior to and following 12-week intervention with fish oil or corn oil. Our main method for research is comparing these two datasets side-by-side and finding differences between the RNA expression to find which key genes are involved in the progression of obesity in pig models and humans. 
