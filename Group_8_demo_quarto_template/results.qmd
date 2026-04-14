@@ -16,7 +16,7 @@ library(heatmaply)
 library(htmlwidgets)
 
 
-data <- read_excel("C:/Users/sravy_zbboaem/Downloads/GSE61271_gene_names_and_GSM_headers.xlsx")
+data <- read_excel("data/GSE61271_gene_names_and_GSM_headers.xlsx")
 data <- as.data.frame(data)
 
 
