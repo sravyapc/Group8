@@ -43,7 +43,7 @@ top_genes <- names(sort(gene_variance, decreasing = TRUE))[1:50]
 heatmap_data <- data[top_genes, ]
 
 
-metadata <- read.csv("C:/Users/sravy_zbboaem/Downloads/GSE61271_sample_metadata.csv")
+metadata <- read.csv("data/GSE61271_sample_metadata.csv")
 
 metadata2 <- metadata[match(colnames(heatmap_data), metadata$geo_accession), ]
 
