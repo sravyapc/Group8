@@ -36,16 +36,13 @@ data[] <- lapply(data, function(x) as.numeric(as.character(x)))
 data <- data[complete.cases(data), ]
 cat("4. After numeric conversion & removing NAs:", nrow(data), "rows\n")
 
-# Much less strict filtering - just keep everything with variance > 0
 row_var <- apply(data, 1, var, na.rm = TRUE)
 cat("5. Variance stats:\n")
 print(summary(row_var))
 
-# Keep genes with any positive variance
 data <- data[row_var > 0, ]
 cat("6. After variance > 0 filter:", nrow(data), "rows\n")
 
-# Get top genes by variance
 gene_variance <- apply(data, 1, var, na.rm = TRUE)
 n_genes <- min(50, nrow(data))
 cat("7. Top genes to select:", n_genes, "\n")
@@ -71,7 +68,6 @@ annotation_col <- data.frame(
 
 rownames(annotation_col) <- colnames(heatmap_data)
 
-# Disable clustering if we have fewer than 2 genes/samples
 cluster_rows <- nrow(heatmap_data) >= 2
 cluster_cols <- ncol(heatmap_data) >= 2
 
@@ -80,8 +76,8 @@ cat("9. Clustering - rows:", cluster_rows, ", cols:", cluster_cols, "\n")
 pheatmap(
   as.matrix(heatmap_data),
   scale = "none",
-  cluster_rows = cluster_rows,  # Disable if < 2 rows
-  cluster_cols = cluster_cols,  # Disable if < 2 cols
+  cluster_rows = cluster_rows,  
+  cluster_cols = cluster_cols,  
   annotation_col = annotation_col,
   show_colnames = TRUE,
   angle_col = 45,
@@ -90,3 +86,5 @@ pheatmap(
   width = 10,
   height = 8
 )
+
+```
