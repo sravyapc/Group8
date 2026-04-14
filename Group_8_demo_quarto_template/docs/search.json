@@ -45,7 +45,7 @@
     "objectID": "results.html#figures",
     "href": "results.html#figures",
     "title": "Results",
-    "section": "0.2 Figures",
-    "text": "0.2 Figures\nAdd figures as you generate them. Example:\nlibrary(readxl) library(pheatmap) library(dplyr)\ndata &lt;- read_excel(“data/GSE61271_gene_names_and_GSM_headers.xlsx”) metadata &lt;- read.csv(“data/GSE61271_sample_metadata.csv”)\ncat(“1. Initial data rows:”, nrow(data), “”) cat(” Data columns:“, ncol(data),”“)\ndata\\(Gene &lt;- as.character(data\\)Gene) data\\(Gene[is.na(data\\)Gene) | data\\(Gene == \"\"] &lt;- paste0(\"Unknown_\", which(is.na(data\\)Gene) | data$Gene == ““))\ndata &lt;- data[!grepl(“^ENSSSCG”, data$Gene, ignore.case = TRUE), ] cat(“2. After removing ENSSSCG rows:”, nrow(data), “”)\nrownames(data) &lt;- make.unique(data$Gene)\ndata\\(Gene &lt;- NULL\ndata\\)Gene_name &lt;- NULL\ncat(“3. Columns before numeric conversion:”, ncol(data), “”)\ndata[] &lt;- lapply(data, function(x) as.numeric(as.character(x))) data &lt;- data[complete.cases(data), ] cat(“4. After numeric conversion & removing NAs:”, nrow(data), “rows”)"
+    "section": "2 Figures",
+    "text": "2 Figures\nAdd figures as you generate them. Example:"
   }
 ]

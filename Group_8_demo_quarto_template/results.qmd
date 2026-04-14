@@ -9,57 +9,50 @@ Add bullet points as you go.
 Add figures as you generate them. Example:
 
 ```{r}
+#| echo: FALSE
 library(readxl)
-library(pheatmap)
 library(dplyr)
+library(heatmaply)
+library(htmlwidgets)
 
-data <- read_excel("data/GSE61271_gene_names_and_GSM_headers.xlsx")
-metadata <- read.csv("data/GSE61271_sample_metadata.csv")
 
-cat("1. Initial data rows:", nrow(data), "\n")
-cat("   Data columns:", ncol(data), "\n")
+data <- read_excel("C:/Users/sravy_zbboaem/Downloads/GSE61271_gene_names_and_GSM_headers.xlsx")
+data <- as.data.frame(data)
+
+
 
 data$Gene <- as.character(data$Gene)
 data$Gene[is.na(data$Gene) | data$Gene == ""] <- paste0("Unknown_", which(is.na(data$Gene) | data$Gene == ""))
 
 data <- data[!grepl("^ENSSSCG", data$Gene, ignore.case = TRUE), ]
-cat("2. After removing ENSSSCG rows:", nrow(data), "\n")
 
 rownames(data) <- make.unique(data$Gene)
 
 data$Gene <- NULL
 data$Gene_name <- NULL
 
-cat("3. Columns before numeric conversion:", ncol(data), "\n")
-
 data[] <- lapply(data, function(x) as.numeric(as.character(x)))
+
 data <- data[complete.cases(data), ]
-cat("4. After numeric conversion & removing NAs:", nrow(data), "rows\n")
 
 row_var <- apply(data, 1, var, na.rm = TRUE)
-cat("5. Variance stats:\n")
-print(summary(row_var))
-
 data <- data[row_var > 0, ]
-cat("6. After variance > 0 filter:", nrow(data), "rows\n")
 
 gene_variance <- apply(data, 1, var, na.rm = TRUE)
-n_genes <- min(50, nrow(data))
-cat("7. Top genes to select:", n_genes, "\n")
-
-if(n_genes < 2) {
-  cat("\n⚠️ WARNING: Only", n_genes, "genes available!\n")
-  cat("Showing all available genes.\n")
-  top_genes <- rownames(data)
-} else {
-  top_genes <- names(sort(gene_variance, decreasing = TRUE))[1:n_genes]
-}
-
+top_genes <- names(sort(gene_variance, decreasing = TRUE))[1:50]
 heatmap_data <- data[top_genes, ]
-cat("8. Final heatmap matrix:", nrow(heatmap_data), "genes x", ncol(heatmap_data), "samples\n")
-cat("   Matrix is finite:", all(is.finite(as.matrix(heatmap_data))), "\n")
+
+
+metadata <- read.csv("C:/Users/sravy_zbboaem/Downloads/GSE61271_sample_metadata.csv")
 
 metadata2 <- metadata[match(colnames(heatmap_data), metadata$geo_accession), ]
+
+colnames(heatmap_data) <- paste(
+  colnames(heatmap_data),
+  metadata2$biological_state,
+  metadata2$Sex,
+  sep = " | "
+)
 
 annotation_col <- data.frame(
   BiologicalState = metadata2$biological_state,
@@ -68,23 +61,22 @@ annotation_col <- data.frame(
 
 rownames(annotation_col) <- colnames(heatmap_data)
 
-cluster_rows <- nrow(heatmap_data) >= 2
-cluster_cols <- ncol(heatmap_data) >= 2
 
-cat("9. Clustering - rows:", cluster_rows, ", cols:", cluster_cols, "\n")
-
-pheatmap(
+hm <- heatmaply(
   as.matrix(heatmap_data),
-  scale = "none",
-  cluster_rows = cluster_rows,  
-  cluster_cols = cluster_cols,  
-  annotation_col = annotation_col,
-  show_colnames = TRUE,
-  angle_col = 45,
-  fontsize_col = 7,
+  scale = "row",
+  Rowv = TRUE,
+  Colv = TRUE,
+  column_side_colors = annotation_col,
+  xlab = "Samples",
+  ylab = "Genes",
   main = "Top 50 Most Variable Genes",
-  width = 10,
-  height = 8
+  fontsize_row = 8,
+  fontsize_col = 8
 )
+
+hm
+
+
 
 ```
