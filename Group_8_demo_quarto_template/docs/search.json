@@ -47,5 +47,40 @@
     "title": "Results",
     "section": "2 Figures",
     "text": "2 Figures\nAdd figures as you generate them. Example:"
+  },
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "Proposal",
+    "section": "",
+    "text": "State your main question in 1–2 sentences. We are just using plain text here. For example Alcohol-associated liver disease is influenced by both genetic and environmental factors. In this project, we analyze publicly available transcriptomic data to evaluate…"
+  },
+  {
+    "objectID": "proposal.html#research-question",
+    "href": "proposal.html#research-question",
+    "title": "Proposal",
+    "section": "",
+    "text": "State your main question in 1–2 sentences. We are just using plain text here. For example Alcohol-associated liver disease is influenced by both genetic and environmental factors. In this project, we analyze publicly available transcriptomic data to evaluate…"
+  },
+  {
+    "objectID": "proposal.html#datasets",
+    "href": "proposal.html#datasets",
+    "title": "Proposal",
+    "section": "2 Dataset(s)",
+    "text": "2 Dataset(s)\n\nSource:\nSample size:\nKey variables:\nLicense/usage notes:"
+  },
+  {
+    "objectID": "proposal.html#planned-analysis",
+    "href": "proposal.html#planned-analysis",
+    "title": "Proposal",
+    "section": "3 Planned analysis",
+    "text": "3 Planned analysis\nDescribe your plan in bullets: - Cleaning/QC - Visualizations - Statistical/ML approach - How you’ll validate (train/test, CV, sensitivity checks, etc.)"
+  },
+  {
+    "objectID": "proposal.html#deliverables",
+    "href": "proposal.html#deliverables",
+    "title": "Proposal",
+    "section": "4 Deliverables",
+    "text": "4 Deliverables\n\nWebsite sections\nKey figures/tables\nAny optional stretch goals"
   }
 ]
