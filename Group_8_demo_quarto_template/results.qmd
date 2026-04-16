@@ -82,34 +82,3 @@ hm
 ```
 
 
-```{r}
-library(ggplot2)
-library(plotly)
-
-p <- ggplot(
-  combined,
-  aes(
-    x = logFC,
-    y = negLogP,
-    color = significance,
-    text = paste(
-      "Species:", Species,
-      "<br>logFC:", round(logFC, 3),
-      "<br>-log10(adj.P.Val):", round(negLogP, 3),
-      "<br>Significance:", significance
-    )
-  )
-) +
-  geom_point(alpha = 0.7) +
-  facet_wrap(~Species) +
-  theme_minimal() +
-  labs(
-    title = "GSVA Pathway Changes with BMI",
-    x = "logFC",
-    y = "-log10(adj.P.Val)"
-  ) +
-  scale_color_manual(values = c("grey", "red"))
-
-ggplotly(p, tooltip = "text")
-
-```
