@@ -3,10 +3,10 @@ title: "Team"
 ---
 
 ## Members
-- Name 1 — role (data cleaning, EDA, modeling, writing)
-- Name 2 — role
-- Name 3 — role
-- Name 4 — role
+- April Tian — role (data cleaning, EDA, modeling, writing)
+- Bryonna Williams — role
+- Sage Paz — role
+- Sravya Chalamacharla — role
 
 ## Collaboration rules (simple)
 - Pull before you start work.

@@ -9,20 +9,24 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: Introduction
       - href: proposal.qmd
-        text: Proposal
+        text: Methods                
       - href: results.qmd
         text: Results
+      - href: limitations.qmd
+        text: Limitations & Future Work
       - href: team.qmd
         text: Team
+      - href: references.qmd
+        text: Works Cited
   page-footer:
     left: "BNFO 420 • VCU"
     right: "Built with Quarto"
 
 format:
   html:
-    theme: cosmo
+    theme: journal
     toc: true
     number-sections: true
     embed-resources: true
