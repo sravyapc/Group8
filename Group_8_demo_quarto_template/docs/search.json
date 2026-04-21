@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Pig vs Human Genome Comparison",
     "section": "",
-    "text": "Write 4–6 sentences describing: - your approach (methods) - what you will deliver (figures, model, dashboard, etc.) - Obesity is a complex metabolic disorder characterized by excessive adipose tissue accumulation that extends beyond energy storage to include critical endocrine functions, such as secreting leptin to regulate appetite and metabolism. The progression from leanness to obesity involves dynamic changes in fat cell size, number, and inflammatory status, orchestrated by specific gene expression patterns. Our research consists of two main datasets: GSE61271 - RNA-Sequencing of lean, intermediate, and obese pigs. As well as, GSE162653 - RNA-seq analysis of human white adipose tissue from normal weight and obese individuals prior to and following 12-week intervention with fish oil or corn oil. Our main method for research is comparing these two datasets side-by-side and finding differences between the RNA expression to find which key genes are involved in the progression of obesity in pig models and humans."
+    "text": "300 - 400 words: - Obesity is a complex metabolic disorder characterized by excessive adipose tissue accumulation that extends beyond energy storage to include critical endocrine functions, such as secreting leptin to regulate appetite and metabolism. The progression from leanness to obesity involves dynamic changes in fat cell size, number, and inflammatory status, orchestrated by specific gene expression patterns. Our research consists of two main datasets: GSE61271 - RNA-Sequencing of lean, intermediate, and obese pigs. As well as, GSE162653 - RNA-seq analysis of human white adipose tissue from normal weight and obese individuals prior to and following 12-week intervention with fish oil or corn oil. Our main method for research is comparing these two datasets side-by-side and finding differences between the RNA expression to find which key genes are involved in the progression of obesity in pig models and humans."
   },
   {
     "objectID": "index.html#one-paragraph-summary",
@@ -103,5 +103,19 @@
     "title": "Team",
     "section": "2 Collaboration rules (simple)",
     "text": "2 Collaboration rules (simple)\n\nPull before you start work.\nCommit small changes with clear messages.\nOnly one person edits the same .qmd file at a time.\nUse Issues (optional) for tasks/bugs."
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "Pig vs Human Genome Comparison",
+    "section": "",
+    "text": "300 - 400 words: - Obesity is a complex metabolic disorder characterized by excessive adipose tissue accumulation that extends beyond energy storage to include critical endocrine functions, such as secreting leptin to regulate appetite and metabolism. The progression from leanness to obesity involves dynamic changes in fat cell size, number, and inflammatory status, orchestrated by specific gene expression patterns. Our research consists of two main datasets: GSE61271 - RNA-Sequencing of lean, intermediate, and obese pigs. As well as, GSE162653 - RNA-seq analysis of human white adipose tissue from normal weight and obese individuals prior to and following 12-week intervention with fish oil or corn oil. Our main method for research is comparing these two datasets side-by-side and finding differences between the RNA expression to find which key genes are involved in the progression of obesity in pig models and humans."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Pig vs Human Genome Comparison",
+    "section": "2 Introduction",
+    "text": "2 Introduction\n\nFind dataset(s)\nDefine outcome + predictors / variables\nExploratory analysis + QC\nMethod 1 (required)\nMethod 2 (optional/extension)\nFinal figures + interpretation\nLimitations + ethics + reproducibility notes"
   }
 ]
