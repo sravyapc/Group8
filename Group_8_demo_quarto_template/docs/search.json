@@ -117,5 +117,26 @@
     "title": "Pig vs Human Genome Comparison",
     "section": "2 Introduction",
     "text": "2 Introduction\n\nFind dataset(s)\nDefine outcome + predictors / variables\nExploratory analysis + QC\nMethod 1 (required)\nMethod 2 (optional/extension)\nFinal figures + interpretation\nLimitations + ethics + reproducibility notes"
+  },
+  {
+    "objectID": "limitations.html",
+    "href": "limitations.html",
+    "title": "BNFO 420 - Capstone",
+    "section": "",
+    "text": "title: “Limitations”"
+  },
+  {
+    "objectID": "limitations.html#limitations",
+    "href": "limitations.html#limitations",
+    "title": "BNFO 420 - Capstone",
+    "section": "1 Limitations",
+    "text": "1 Limitations\n-"
+  },
+  {
+    "objectID": "limitations.html#future-work",
+    "href": "limitations.html#future-work",
+    "title": "BNFO 420 - Capstone",
+    "section": "2 Future Work",
+    "text": "2 Future Work\n-"
   }
 ]
