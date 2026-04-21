@@ -11,11 +11,13 @@ website:
       - href: index.qmd
         text: Home
       - href: proposal.qmd
-        text: Proposal
+        text: Proposal                
       - href: results.qmd
         text: Results
       - href: team.qmd
         text: Team
+      - href: references.qmd
+        text: Works Cited
   page-footer:
     left: "BNFO 420 • VCU"
     right: "Built with Quarto"
