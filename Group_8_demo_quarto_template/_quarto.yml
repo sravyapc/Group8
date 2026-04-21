@@ -11,7 +11,7 @@ website:
       - href: index.qmd
         text: Introduction
       - href: proposal.qmd
-        text: Proposal                
+        text: Methods                
       - href: results.qmd
         text: Results
       - href: limitations.qmd
