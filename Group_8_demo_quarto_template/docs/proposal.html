@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Proposal – BNFO 420 - Capstone</title>
+<title>Methods – BNFO 420 - Capstone</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3888,9 +3888,10 @@ vertical-align: -.125em;
    
   <ul>
   <li><a href="#research-question" id="toc-research-question" class="nav-link active" data-scroll-target="#research-question"><span class="header-section-number">1</span> Research question</a></li>
-  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><span class="header-section-number">2</span> Dataset(s)</a></li>
-  <li><a href="#planned-analysis" id="toc-planned-analysis" class="nav-link" data-scroll-target="#planned-analysis"><span class="header-section-number">3</span> Planned analysis</a></li>
-  <li><a href="#deliverables" id="toc-deliverables" class="nav-link" data-scroll-target="#deliverables"><span class="header-section-number">4</span> Deliverables</a></li>
+  <li><a href="#pipeline" id="toc-pipeline" class="nav-link" data-scroll-target="#pipeline"><span class="header-section-number">2</span> pipeline</a></li>
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><span class="header-section-number">3</span> Dataset(s)</a></li>
+  <li><a href="#planned-analysis" id="toc-planned-analysis" class="nav-link" data-scroll-target="#planned-analysis"><span class="header-section-number">4</span> Planned analysis</a></li>
+  <li><a href="#deliverables" id="toc-deliverables" class="nav-link" data-scroll-target="#deliverables"><span class="header-section-number">5</span> Deliverables</a></li>
   </ul>
 </nav>
     </div>
@@ -3899,7 +3900,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Proposal</h1>
+<h1 class="title">Methods</h1>
 </div>
 
 
@@ -3920,8 +3921,18 @@ vertical-align: -.125em;
 <h2 data-number="1" class="anchored" data-anchor-id="research-question"><span class="header-section-number">1</span> Research question</h2>
 <p>State your main question in 1–2 sentences. We are just using plain text here. For example Alcohol-associated liver disease is influenced by both genetic and environmental factors. In this project, we analyze publicly available transcriptomic data to evaluate…</p>
 </section>
-<section id="datasets" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="datasets"><span class="header-section-number">2</span> Dataset(s)</h2>
+<section id="pipeline" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="pipeline"><span class="header-section-number">2</span> pipeline</h2>
+<ul>
+<li>Our workflow follows a structured parallel analysis of porcine and human transcriptomes:</li>
+<li>Data Acquisition: Datasets were retrieved from the NCBI Gene Expression Omnibus: GSE61271 (Pig) and GSE162653 (Human).</li>
+<li>Preprocessing: Human raw counts were processed using the DESeq2 vignette (Love et al., 2014). Pig data, provided as pre-normalized counts, was analyzed using the limma user guide (Ritchie et al., 2015).</li>
+<li>Ortholog Mapping: Pig Ensembl IDs were converted to human gene symbols using biomaRt for cross-species compatibility.</li>
+<li>Pathway Analysis: We employed GSVA to calculate enrichment scores for the MSigDB Hallmark Gene Set (Liberzon et al., 2015).</li>
+</ul>
+</section>
+<section id="datasets" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="datasets"><span class="header-section-number">3</span> Dataset(s)</h2>
 <ul>
 <li>Source:</li>
 <li>Sample size:</li>
@@ -3929,12 +3940,12 @@ vertical-align: -.125em;
 <li>License/usage notes:</li>
 </ul>
 </section>
-<section id="planned-analysis" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="planned-analysis"><span class="header-section-number">3</span> Planned analysis</h2>
+<section id="planned-analysis" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="planned-analysis"><span class="header-section-number">4</span> Planned analysis</h2>
 <p>Describe your plan in bullets: - Cleaning/QC - Visualizations - Statistical/ML approach - How you’ll validate (train/test, CV, sensitivity checks, etc.)</p>
 </section>
-<section id="deliverables" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="deliverables"><span class="header-section-number">4</span> Deliverables</h2>
+<section id="deliverables" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="deliverables"><span class="header-section-number">5</span> Deliverables</h2>
 <ul>
 <li>Website sections</li>
 <li>Key figures/tables</li>

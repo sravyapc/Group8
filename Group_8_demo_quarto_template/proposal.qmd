@@ -1,10 +1,18 @@
 ---
-title: "Proposal"
+title: "Methods"
 ---
 
 ## Research question
 State your main question in 1–2 sentences. We are just using plain text here. For example Alcohol-associated liver disease is influenced by both genetic and
 environmental factors. In this project, we analyze publicly available transcriptomic data to evaluate...
+
+## pipeline
+- Our workflow follows a structured parallel analysis of porcine and human transcriptomes:
+- Data Acquisition: Datasets were retrieved from the NCBI Gene Expression Omnibus: GSE61271 (Pig) and GSE162653 (Human).
+- Preprocessing: Human raw counts were processed using the DESeq2 vignette (Love et al., 2014). Pig data, provided as pre-normalized counts, was analyzed using the limma user guide (Ritchie et al., 2015).
+- Ortholog Mapping: Pig Ensembl IDs were converted to human gene symbols using biomaRt for cross-species compatibility.
+- Pathway Analysis: We employed GSVA to calculate enrichment scores for the MSigDB Hallmark Gene Set (Liberzon et al., 2015).
+
 
 ## Dataset(s)
 - Source:

@@ -20,5 +20,5 @@ Our pipeline integrated DESeq2 for human raw count analysis and limma for normal
 ## Hypothesis
 
 - H₀ (Null): Adiposity status has no significant effect on the expression of the LEP pathway or inflammatory signaling in either pigs or humans.
-H₁ (Alternate): Increasing adiposity levels will trigger a concordant upregulation of LEP and functionally co-expressed genes (RETN, FABP4, PLIN1, CFD, NAMPT, SERPINE1, SOCS3) and a significant increase in inflammatory pathway activity in both species.
+- H₁ (Alternate): Increasing adiposity levels will trigger a concordant upregulation of LEP and functionally co-expressed genes (RETN, FABP4, PLIN1, CFD, NAMPT, SERPINE1, SOCS3) and a significant increase in inflammatory pathway activity in both species.
 
