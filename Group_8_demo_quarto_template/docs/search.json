@@ -18,7 +18,7 @@
     "href": "proposal.html#datasets",
     "title": "Methods",
     "section": "3 Dataset(s)",
-    "text": "3 Dataset(s)\n\nSource:\nSample size:\nKey variables:\nLicense/usage notes:"
+    "text": "3 Dataset(s)\n\nGSE61271 Pig Data\n\nSample Size:\nKey Variables:\n\nGSE162653 Human Data\n\nSample Size:\nKey Variables:"
   },
   {
     "objectID": "proposal.html#planned-analysis",
@@ -150,7 +150,7 @@
     "objectID": "proposal.html#pipeline",
     "href": "proposal.html#pipeline",
     "title": "Methods",
-    "section": "2 pipeline",
-    "text": "2 pipeline\n\nOur workflow follows a structured parallel analysis of porcine and human transcriptomes:\nData Acquisition: Datasets were retrieved from the NCBI Gene Expression Omnibus: GSE61271 (Pig) and GSE162653 (Human).\nPreprocessing: Human raw counts were processed using the DESeq2 vignette (Love et al., 2014). Pig data, provided as pre-normalized counts, was analyzed using the limma user guide (Ritchie et al., 2015).\nOrtholog Mapping: Pig Ensembl IDs were converted to human gene symbols using biomaRt for cross-species compatibility.\nPathway Analysis: We employed GSVA to calculate enrichment scores for the MSigDB Hallmark Gene Set (Liberzon et al., 2015)."
+    "section": "2 Pipeline",
+    "text": "2 Pipeline\n\nOur workflow follows a structured parallel analysis of porcine and human transcriptomes:\nData Acquisition: Datasets were retrieved from the NCBI Gene Expression Omnibus: GSE61271 (Pig) and GSE162653 (Human).\nPreprocessing: Human raw counts were processed using the DESeq2 vignette (Love et al., 2014). Pig data, provided as pre-normalized counts, was analyzed using the limma user guide (Ritchie et al., 2015).\nOrtholog Mapping: Pig Ensembl IDs were converted to human gene symbols using biomaRt for cross-species compatibility.\nPathway Analysis: We employed GSVA to calculate enrichment scores for the MSigDB Hallmark Gene Set (Liberzon et al., 2015).\n\n\ngraph TD\n    A[GSE61271 Pig Data] --&gt; B(limma Analysis)\n    C[GSE162653 Human Data] --&gt; D(DESeq2 Analysis)\n    B --&gt; E[biomaRt Ortholog Mapping]\n    D --&gt; F[Gene Symbols]\n    E --&gt; G[Comparative Pathway Analysis - GSVA]\n    F --&gt; G\n    G --&gt; H[Results: Conserved Inflammation vs. Divergent Metabolism]\n\n\n\n\ngraph TD\n    A[GSE61271 Pig Data] --&gt; B(limma Analysis)\n    C[GSE162653 Human Data] --&gt; D(DESeq2 Analysis)\n    B --&gt; E[biomaRt Ortholog Mapping]\n    D --&gt; F[Gene Symbols]\n    E --&gt; G[Comparative Pathway Analysis - GSVA]\n    F --&gt; G\n    G --&gt; H[Results: Conserved Inflammation vs. Divergent Metabolism]"
   }
 ]
