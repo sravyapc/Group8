@@ -23,7 +23,7 @@ graph TD
     F --> G
     G --> H[Results: Conserved Inflammation vs. Divergent Metabolism]
 ```
-## Dataset(s)
+## Datasets
 - GSE61271 Pig Data
     + Sample Size: 
     + Key Variables:

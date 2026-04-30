@@ -3,10 +3,10 @@ title: "Team"
 ---
 
 ## Members
-- April Tian — role (data cleaning, EDA, modeling, writing)
-- Bryonna Williams — role
-- Sage Paz — role
-- Sravya Chalamacharla — role
+- April Tian — PCA plots, differential analysis, pathway analysis
+- Bryonna Williams — Gene mapping, literature review
+- Sage Paz — Dataset procurement, website development
+- Sravya Chalamacharla — Heatmaps, website development
 
 ## Collaboration rules (simple)
 - Pull before you start work.

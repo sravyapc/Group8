@@ -39,21 +39,21 @@
     "href": "limitations.html",
     "title": "BNFO 420 - Capstone",
     "section": "",
-    "text": "-"
+    "text": "In this study, there were limitations on several factors related to data availability and cross species comparison. The pig dataset (GSE6171) was already normalized and raw RNA-seq count was not available which prevented the ability to use standardized differential expression tools such as DESq2. A different approach was used, using limma for differential analysis. In contrast, the human dataset (GSE162653) contained raw counts, therefore this led to methodological inconsistency between analysis for both species and cross species. Additionally, the cross species gene mapping from pig to human orthologs may have resulted in incomplete gene matches which can potentially affect comparisons. The PCA analysis showed weak clustering by adiposity in pigs which suggests lower gene expression. Lastly, the analysis is based on transcriptomic data. Therefore, its correlation and cannot determine casualty between gene expression changes and obesity progressions."
   },
   {
     "objectID": "limitations.html#limitations",
     "href": "limitations.html#limitations",
     "title": "BNFO 420 - Capstone",
     "section": "",
-    "text": "-"
+    "text": "In this study, there were limitations on several factors related to data availability and cross species comparison. The pig dataset (GSE6171) was already normalized and raw RNA-seq count was not available which prevented the ability to use standardized differential expression tools such as DESq2. A different approach was used, using limma for differential analysis. In contrast, the human dataset (GSE162653) contained raw counts, therefore this led to methodological inconsistency between analysis for both species and cross species. Additionally, the cross species gene mapping from pig to human orthologs may have resulted in incomplete gene matches which can potentially affect comparisons. The PCA analysis showed weak clustering by adiposity in pigs which suggests lower gene expression. Lastly, the analysis is based on transcriptomic data. Therefore, its correlation and cannot determine casualty between gene expression changes and obesity progressions."
   },
   {
     "objectID": "limitations.html#future-work",
     "href": "limitations.html#future-work",
     "title": "BNFO 420 - Capstone",
     "section": "2 Future Work",
-    "text": "2 Future Work\n-"
+    "text": "2 Future Work\n\nFuture research will utilize single-cell RNA-sequencing (scRNA-seq), specifically targeting the Bama pig atlas (Chen et al., 2025), to differentiate between adipocyte-specific and macrophage-specific inflammatory signals. We could also plan on conducting a depot-specific comparison (visceral vs. subcutaneous fat) to determine if the metabolic divergence observed is consistent across different adipose locations."
   },
   {
     "objectID": "results.html",
@@ -81,14 +81,14 @@
     "href": "team.html",
     "title": "Team",
     "section": "",
-    "text": "April Tian — role (data cleaning, EDA, modeling, writing)\nBryonna Williams — role\nSage Paz — role\nSravya Chalamacharla — role"
+    "text": "April Tian — PCA plots, differential analysis, pathway analysis\nBryonna Williams — Gene mapping, literature review\nSage Paz — Dataset procurement, website development\nSravya Chalamacharla — Heatmaps, website development"
   },
   {
     "objectID": "team.html#members",
     "href": "team.html#members",
     "title": "Team",
     "section": "",
-    "text": "April Tian — role (data cleaning, EDA, modeling, writing)\nBryonna Williams — role\nSage Paz — role\nSravya Chalamacharla — role"
+    "text": "April Tian — PCA plots, differential analysis, pathway analysis\nBryonna Williams — Gene mapping, literature review\nSage Paz — Dataset procurement, website development\nSravya Chalamacharla — Heatmaps, website development"
   },
   {
     "objectID": "team.html#collaboration-rules-simple",
