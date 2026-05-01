@@ -73,8 +73,8 @@
     "objectID": "results.html#figures",
     "href": "results.html#figures",
     "title": "Results",
-    "section": "2 Figures",
-    "text": "2 Figures\nAdd figures as you generate them. Example:"
+    "section": "0.2 Figures",
+    "text": "0.2 Figures"
   },
   {
     "objectID": "team.html",
@@ -152,5 +152,26 @@
     "title": "Methods",
     "section": "2 Pipeline",
     "text": "2 Pipeline\n\nOur workflow follows a structured parallel analysis of porcine and human transcriptomes:\nData Acquisition: Datasets were retrieved from the NCBI Gene Expression Omnibus: GSE61271 (Pig) and GSE162653 (Human).\nPreprocessing: Human raw counts were processed using the DESeq2 vignette (Love et al., 2014). Pig data, provided as pre-normalized counts, was analyzed using the limma user guide (Ritchie et al., 2015).\nOrtholog Mapping: Pig Ensembl IDs were converted to human gene symbols using biomaRt for cross-species compatibility.\nPathway Analysis: We employed GSVA to calculate enrichment scores for the MSigDB Hallmark Gene Set (Liberzon et al., 2015).\n\n\ngraph TD\n    A[GSE61271 Pig Data] --&gt; B(limma Analysis)\n    C[GSE162653 Human Data] --&gt; D(DESeq2 Analysis)\n    B --&gt; E[biomaRt Ortholog Mapping]\n    D --&gt; F[Gene Symbols]\n    E --&gt; G[Comparative Pathway Analysis - GSVA]\n    F --&gt; G\n    G --&gt; H[Results: Conserved Inflammation vs. Divergent Metabolism]\n\n\n\n\ngraph TD\n    A[GSE61271 Pig Data] --&gt; B(limma Analysis)\n    C[GSE162653 Human Data] --&gt; D(DESeq2 Analysis)\n    B --&gt; E[biomaRt Ortholog Mapping]\n    D --&gt; F[Gene Symbols]\n    E --&gt; G[Comparative Pathway Analysis - GSVA]\n    F --&gt; G\n    G --&gt; H[Results: Conserved Inflammation vs. Divergent Metabolism]"
+  },
+  {
+    "objectID": "results.html#hypothesis-driven-gene-trend-correlation",
+    "href": "results.html#hypothesis-driven-gene-trend-correlation",
+    "title": "Results",
+    "section": "1.1 Hypothesis-Driven Gene Trend Correlation",
+    "text": "1.1 Hypothesis-Driven Gene Trend Correlation\n\n\n\n\n\n\nBrief analysis: - Focuses on LEP, FABP4, etc. - Highlights biologically relevant expression patterns.\\ - Positive correlations → increasing with adiposity - Negative correlations → decreasing - Mixed results support partial hypothesis"
+  },
+  {
+    "objectID": "results.html#top-30-most-variable-genes",
+    "href": "results.html#top-30-most-variable-genes",
+    "title": "Results",
+    "section": "1.2 Top 30 Most Variable Genes",
+    "text": "1.2 Top 30 Most Variable Genes\n\n\n\n\n\n\nBrief analysis: - These genes show the highest variability across samples. - Clustering suggests grouping by adiposity levels."
+  },
+  {
+    "objectID": "results.html#heatmaps-by-biological-state",
+    "href": "results.html#heatmaps-by-biological-state",
+    "title": "Results",
+    "section": "1.3 Heatmaps by Biological State",
+    "text": "1.3 Heatmaps by Biological State\n\nLowMeanHigh\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBrief analysis: - Low vs High groups show distinct clustering patterns. - Some genes appear consistently upregulated in High adiposity."
   }
 ]
