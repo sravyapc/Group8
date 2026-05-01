@@ -326,9 +326,6 @@ mode(counts) <- "numeric"
 
 metadata <- read.csv("data/GSE61271_sample_metadata.csv")
 
-colnames(counts) <- trimws(colnames(counts))
-metadata$geo_accession <- trimws(metadata$geo_accession)
-
 metadata2 <- metadata[match(colnames(counts), metadata$geo_accession), ]
 
 gene_var <- apply(counts, 1, var, na.rm = TRUE)
@@ -343,7 +340,7 @@ pca_var_perc <- round(100 * pca_var / sum(pca_var), 1)
 pca_df <- data.frame(
   PC1 = pca_res$x[, 1],
   PC2 = pca_res$x[, 2],
-  Obesity = factor(metadata2$biological_state, levels = c("Low", "Mean", "High")),
+  Obesity = metadata2$biological_state,
   Sex = metadata2$Sex,
   Sample = metadata2$geo_accession
 )
