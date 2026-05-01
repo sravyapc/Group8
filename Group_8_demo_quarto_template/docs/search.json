@@ -60,7 +60,7 @@
     "href": "results.html",
     "title": "Results",
     "section": "",
-    "text": "Add bullet points as you go."
+    "text": "This page presents the main results from the pig and human adiposity datasets. Figures are organized by dataset, followed by a cross-species comparison."
   },
   {
     "objectID": "results.html#key-findings-draft",
@@ -172,6 +172,83 @@
     "href": "results.html#heatmaps-by-biological-state",
     "title": "Results",
     "section": "1.3 Heatmaps by Biological State",
-    "text": "1.3 Heatmaps by Biological State\n\nLowMeanHigh\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBrief analysis: - Low vs High groups show distinct clustering patterns. - Some genes appear consistently upregulated in High adiposity.\n\n\n\n\n\n\n\n\n\nCaption"
+    "text": "1.3 Heatmaps by Biological State\n\nLowMeanHigh\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBrief analysis: - Low vs High groups show distinct clustering patterns. - Some genes appear consistently upregulated in High adiposity.\n\n\n\nSignificant pathways in pigs"
+  },
+  {
+    "objectID": "results.html#cross-species-comparison",
+    "href": "results.html#cross-species-comparison",
+    "title": "Results",
+    "section": "2.1 Cross-species Comparison",
+    "text": "2.1 Cross-species Comparison\n\n\n\nVolcano plot of human differential expression"
+  },
+  {
+    "objectID": "results.html#pig-obesity-pca",
+    "href": "results.html#pig-obesity-pca",
+    "title": "Results",
+    "section": "2.1 Pig Obesity PCA",
+    "text": "2.1 Pig Obesity PCA\n\n\n\n\n\n\nFigure analysis: Principal component analysis shows individual pig samples colored by obesity level. PCA was performed using the top 500 most variable genes from normalized RNA-seq counts. The three obesity groups show noticeable overlap, suggesting the pig dataset may not strongly separate by obesity level alone. However, it is still useful because it includes low, mean, and high adiposity groups, allowing obesity progression to be examined."
+  },
+  {
+    "objectID": "results.html#pig-differential-expression-volcano-plot",
+    "href": "results.html#pig-differential-expression-volcano-plot",
+    "title": "Results",
+    "section": "2.2 Pig Differential Expression Volcano Plot",
+    "text": "2.2 Pig Differential Expression Volcano Plot\n\nFigure analysis: This volcano plot compares gene expression between high-weight and low-weight pigs. Red points represent significantly differentially expressed genes based on the chosen p-value and log2 fold-change thresholds. The small number of significant genes suggests that obesity-related gene expression differences in pigs may be more subtle compared to humans."
+  },
+  {
+    "objectID": "results.html#pig-hypothesis-driven-gene-trend-correlation",
+    "href": "results.html#pig-hypothesis-driven-gene-trend-correlation",
+    "title": "Results",
+    "section": "2.3 Pig Hypothesis-Driven Gene Trend Correlation",
+    "text": "2.3 Pig Hypothesis-Driven Gene Trend Correlation\n\n\n\n\n\n\nFigure analysis: A bar graph was used to assess how selected adiposity-related genes correlate with increasing adiposity. Each bar represents the Spearman correlation for a gene, indicating whether expression increases, decreases, or shows no clear trend. Of the hypothesized genes, four (PLIN1, CFD, NAMPT, SERPINE1) were present. Notably, NAMPT and SERPINE1 showed positive correlations above 0.3, indicating increased expression with higher adiposity, while the others showed weaker or inconsistent trends. Overall, the results partially support the hypothesis, suggesting gene-specific rather than uniform expression changes."
+  },
+  {
+    "objectID": "results.html#pig-top-30-most-variable-genes-heatmap",
+    "href": "results.html#pig-top-30-most-variable-genes-heatmap",
+    "title": "Results",
+    "section": "2.4 Pig Top 30 Most Variable Genes Heatmap",
+    "text": "2.4 Pig Top 30 Most Variable Genes Heatmap\n\n\n\n\n\n\nFigure analysis: This heatmap shows an unbiased analysis of overall gene expression was conducted using the top 30 most variable genes across adiposity levels. The heatmap shows clear differences between low and high adiposity groups, reflected by distinct blue (low expression) and red (high expression) patterns. This suggests a proportional relationship between adiposity and gene expression for certain genes. The accompanying dendrogram groups genes with similar expression patterns, indicating potential co-regulated gene clusters that may be involved in shared biological processes such as immune response, inflammation, and oxygen transport."
+  },
+  {
+    "objectID": "results.html#pig-heatmaps-by-biological-state",
+    "href": "results.html#pig-heatmaps-by-biological-state",
+    "title": "Results",
+    "section": "2.5 Pig Heatmaps by Biological State",
+    "text": "2.5 Pig Heatmaps by Biological State\n\nLowMeanHigh\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure analysis: To further investigate gene expression changes, the data were separated by biological state (low, mean, high adiposity) while keeping the same set of top genes for comparison. Although the heatmaps may initially appear inconsistent, they reflect the same genes across different adiposity groups. Closer examination shows that genes such as PCK1, TREH, LYZ, SPP1, CSF3R, PADI2, MSR1, and DDX60 increase in expression together as adiposity rises, suggesting coordinated involvement in metabolic and inflammatory processes. At the same time, other genes decrease in expression, indicating that adiposity is associated with both upregulation and downregulation of different biological pathways."
+  },
+  {
+    "objectID": "results.html#pig-significant-pathways",
+    "href": "results.html#pig-significant-pathways",
+    "title": "Results",
+    "section": "2.6 Pig Significant Pathways",
+    "text": "2.6 Pig Significant Pathways\n\nFigure analysis: This bar graph shows significantly upregulated and downregulated pathways in the pig dataset. Upregulated immune and signaling pathways suggest obesity-related inflammation and adipose tissue remodeling. Downregulated pathways may indicate disruption of normal metabolic regulation during obesity progression."
+  },
+  {
+    "objectID": "results.html#human-bmi-pca",
+    "href": "results.html#human-bmi-pca",
+    "title": "Results",
+    "section": "3.1 Human BMI PCA",
+    "text": "3.1 Human BMI PCA\n\n\n\n\n\n\nFigure analysis: This PCA shows individual human samples colored by BMI group. The separation between normal weight and obese samples suggests stronger obesity-related expression differences in the human dataset compared with the pig dataset."
+  },
+  {
+    "objectID": "results.html#human-differential-expression-volcano-plot",
+    "href": "results.html#human-differential-expression-volcano-plot",
+    "title": "Results",
+    "section": "3.2 Human Differential Expression Volcano Plot",
+    "text": "3.2 Human Differential Expression Volcano Plot\n\nFigure analysis: This volcano plot compares gene expression between normal weight and obese humans. Red points represent significantly differentially expressed genes based on adjusted p-value and log2 fold-change thresholds. The larger number of significant genes suggests stronger obesity-associated gene expression changes in humans."
+  },
+  {
+    "objectID": "results.html#human-significant-pathways",
+    "href": "results.html#human-significant-pathways",
+    "title": "Results",
+    "section": "3.3 Human Significant Pathways",
+    "text": "3.3 Human Significant Pathways\n\nFigure analysis: This pathway bar graph shows significant pathway activity changes in the human dataset. Many upregulated pathways are linked to inflammation, stress response, and obesity-related signaling, supporting the idea that obesity is associated with chronic low-grade inflammation and altered metabolism."
+  },
+  {
+    "objectID": "results.html#human-vs-pig-pathway-theme-concordance",
+    "href": "results.html#human-vs-pig-pathway-theme-concordance",
+    "title": "Results",
+    "section": "4.1 Human vs Pig Pathway Theme Concordance",
+    "text": "4.1 Human vs Pig Pathway Theme Concordance\n\nFigure analysis: This bar graph compares pathway-level trends between the human and pig datasets. Inflammatory pathway activity appears shared across species, while metabolism-related differences may reflect differences in obesity timeline, since the human samples represent established obesity while the pig samples may reflect a more recent progression toward higher adiposity."
   }
 ]
