@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
 }
-
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-{ counter-reset: source-line 0; }
-pre.numberSource code > span
-{ position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-{ content: counter(source-line);
-position: relative; left: -1em; text-align: right; vertical-align: baseline;
-border: none; display: inline-block;
--webkit-touch-callout: none; -webkit-user-select: none;
--khtml-user-select: none; -moz-user-select: none;
--ms-user-select: none; user-select: none;
-padding: 0 4px; width: 4em;
-}
-pre.numberSource { margin-left: 3em; padding-left: 4px; }
-div.sourceCode
-{ }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -6820,9 +6785,8 @@ z-index: 1000;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#research-question" id="toc-research-question" class="nav-link active" data-scroll-target="#research-question"><span class="header-section-number">1</span> Research question</a></li>
-  <li><a href="#pipeline" id="toc-pipeline" class="nav-link" data-scroll-target="#pipeline"><span class="header-section-number">2</span> Pipeline</a></li>
-  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><span class="header-section-number">3</span> Datasets</a></li>
+  <li><a href="#pipeline" id="toc-pipeline" class="nav-link active" data-scroll-target="#pipeline"><span class="header-section-number">1</span> Pipeline</a></li>
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><span class="header-section-number">2</span> Datasets</a></li>
   </ul>
 </nav>
     </div>
@@ -6848,12 +6812,8 @@ z-index: 1000;
 </header>
 
 
-<section id="research-question" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="research-question"><span class="header-section-number">1</span> Research question</h2>
-<p>State your main question in 1–2 sentences. We are just using plain text here. For example Alcohol-associated liver disease is influenced by both genetic and environmental factors. In this project, we analyze publicly available transcriptomic data to evaluate…</p>
-</section>
-<section id="pipeline" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="pipeline"><span class="header-section-number">2</span> Pipeline</h2>
+<section id="pipeline" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="pipeline"><span class="header-section-number">1</span> Pipeline</h2>
 <ul>
 <li>Our workflow follows a structured parallel analysis of porcine and human transcriptomes:</li>
 <li>Data Acquisition: Datasets were retrieved from the NCBI Gene Expression Omnibus: GSE61271 (Pig) and GSE162653 (Human).</li>
@@ -6862,14 +6822,6 @@ z-index: 1000;
 <li>Pathway Analysis: We employed GSVA to calculate enrichment scores for the MSigDB Hallmark Gene Set (Liberzon et al., 2015).</li>
 </ul>
 <div class="cell" data-layout-align="default">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>graph TD</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    A[GSE61271 Pig Data] --&gt; B(limma Analysis)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    C[GSE162653 Human Data] --&gt; D(DESeq2 Analysis)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    B --&gt; E[biomaRt Ortholog Mapping]</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    D --&gt; F[Gene Symbols]</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    E --&gt; G[Comparative Pathway Analysis - GSVA]</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    F --&gt; G</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    G --&gt; H[Results: Conserved Inflammation vs. Divergent Metabolism]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
@@ -6889,18 +6841,18 @@ z-index: 1000;
 </div>
 </div>
 </section>
-<section id="datasets" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="datasets"><span class="header-section-number">3</span> Datasets</h2>
+<section id="datasets" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="datasets"><span class="header-section-number">2</span> Datasets</h2>
 <ul>
 <li>GSE61271 Pig Data
 <ul>
-<li>Sample Size:</li>
-<li>Key Variables:</li>
+<li>Sample Size: 36 male and female pigs</li>
+<li>Key Variables: level of obesity, biological state</li>
 </ul></li>
 <li>GSE162653 Human Data
 <ul>
-<li>Sample Size:</li>
-<li>Key Variables:</li>
+<li>Sample Size: 20 human subjects</li>
+<li>Key Variables: type of food oil consumed</li>
 </ul></li>
 </ul>
 

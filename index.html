@@ -3889,8 +3889,10 @@ vertical-align: -.125em;
   <ul>
   <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract"><span class="header-section-number">1</span> Abstract</a></li>
   <li><a href="#background-and-motivation" id="toc-background-and-motivation" class="nav-link" data-scroll-target="#background-and-motivation"><span class="header-section-number">2</span> Background and Motivation</a></li>
-  <li><a href="#rationale" id="toc-rationale" class="nav-link" data-scroll-target="#rationale"><span class="header-section-number">3</span> Rationale</a></li>
-  <li><a href="#hypothesis" id="toc-hypothesis" class="nav-link" data-scroll-target="#hypothesis"><span class="header-section-number">4</span> Hypothesis</a></li>
+  <li><a href="#rationale" id="toc-rationale" class="nav-link" data-scroll-target="#rationale"><span class="header-section-number">3</span> Rationale</a>
+  <ul class="collapse">
+  <li><a href="#hypothesis" id="toc-hypothesis" class="nav-link" data-scroll-target="#hypothesis"><span class="header-section-number">3.1</span> Hypothesis</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -3917,32 +3919,26 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="abstract" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="abstract"><span class="header-section-number">1</span> Abstract</h2>
-<ul>
-<li>Obesity is a complex metabolic disorder characterized by excessive adipose tissue accumulation that extends beyond simple energy storage to include critical endocrine functions, such as the secretion of leptin to regulate appetite and systemic metabolism. The progression from leanness to obesity involves dynamic changes in fat cell size (hypertrophy), cell number (hyperplasia), and inflammatory status, all orchestrated by specific gene expression patterns. While human studies are essential, they are often confounded by lifestyle and genetic heterogeneity, making porcine (Sus scrofa) models an ideal translational alternative due to their remarkable metabolic and physiological similarities to humans. In this study, we utilized two primary transcriptomic datasets: GSE61271 (RNA-sequencing of 36 pigs categorized by biological state: low, mean, and high weight) and GSE162653 (RNA-sequencing of 40 human white adipose tissue samples from normal-weight and obese individuals). Our primary objective was to perform a side-by-side comparative analysis of these datasets to determine if the directionality and magnitude of gene expression in the Leptin (LEP) pathway and associated inflammatory markers are conserved across species. Our pipeline integrated DESeq2 for human raw count analysis and limma for normalized pig data, with cross-species ortholog mapping performed via biomaRt. While individual gene-level results showed significant divergence—with humans exhibiting 108 differentially expressed genes (DEGs) compared to only 4 in pigs—pathway-level analysis via Gene Set Variation Analysis (GSVA) revealed striking conservation. Both species showed significant upregulation in inflammatory and immune pathways, specifically the Complement System and PI3K/AKT/MTOR signaling. However, a significant metabolic divergence was observed: metabolism-related pathways were upregulated in pigs but downregulated in humans. These findings suggest that while the inflammatory hallmark of obesity is highly conserved, the metabolic response may differ based on the timeline of obesity progression or evolutionary adaptations. This research highlights the utility and the limitations of the porcine model in translational metabolic studies.</li>
-</ul>
+<section id="abstract" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Abstract</h1>
+<p>Obesity is a complex metabolic disorder characterized by excessive adipose tissue accumulation that extends beyond simple energy storage to include critical endocrine functions, such as the secretion of leptin to regulate appetite and systemic metabolism. The progression from leanness to obesity involves dynamic changes in fat cell size (hypertrophy), cell number (hyperplasia), and inflammatory status, all orchestrated by specific gene expression patterns. While human studies are essential, they are often confounded by lifestyle and genetic heterogeneity, making porcine (Sus scrofa) models an ideal translational alternative due to their remarkable metabolic and physiological similarities to humans. <br> In this study, we utilized two primary transcriptomic datasets: GSE61271 (RNA-sequencing of 36 pigs categorized by biological state: low, mean, and high weight) and GSE162653 (RNA-sequencing of 40 human white adipose tissue samples from normal-weight and obese individuals). Our primary objective was to perform a side-by-side comparative analysis of these datasets to determine if the directionality and magnitude of gene expression in the Leptin (LEP) pathway and associated inflammatory markers are conserved across species. <br> Our pipeline integrated DESeq2 for human raw count analysis and limma for normalized pig data, with cross-species ortholog mapping performed via biomaRt. While individual gene-level results showed significant divergence—with humans exhibiting 108 differentially expressed genes (DEGs) compared to only 4 in pigs—pathway-level analysis via Gene Set Variation Analysis (GSVA) revealed striking conservation. Both species showed significant upregulation in inflammatory and immune pathways, specifically the Complement System and PI3K/AKT/MTOR signaling. However, a significant metabolic divergence was observed: metabolism-related pathways were upregulated in pigs but downregulated in humans. These findings suggest that while the inflammatory hallmark of obesity is highly conserved, the metabolic response may differ based on the timeline of obesity progression or evolutionary adaptations. This research highlights the utility and the limitations of the porcine model in translational metabolic studies.</p>
 </section>
-<section id="background-and-motivation" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="background-and-motivation"><span class="header-section-number">2</span> Background and Motivation</h2>
-<ul>
-<li>Obesity has reached pandemic proportions, dramatically increasing the risk of chronic comorbidities such as Type 2 diabetes, cardiovascular disease, and hypertension (Manna &amp; Jain, 2015). Adipose tissue is a dynamic endocrine organ that maintains homeostasis by secreting adipokines, most notably Leptin (LEP), which signals energy availability to the brain (Lu et al., 2015). In the obese state, this tissue undergoes profound remodeling characterized by chronic low-grade inflammation and oxidative stress (Manna &amp; Jain, 2015).</li>
-</ul>
+<section id="background-and-motivation" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Background and Motivation</h1>
+<p>Obesity has reached pandemic proportions, dramatically increasing the risk of chronic comorbidities such as Type 2 diabetes, cardiovascular disease, and hypertension (Manna &amp; Jain, 2015). Adipose tissue is a dynamic endocrine organ that maintains homeostasis by secreting adipokines, most notably Leptin (LEP), which signals energy availability to the brain (Lu et al., 2015). In the obese state, this tissue undergoes profound remodeling characterized by chronic low-grade inflammation and oxidative stress (Manna &amp; Jain, 2015).</p>
 </section>
-<section id="rationale" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="rationale"><span class="header-section-number">3</span> Rationale</h2>
-<ul>
-<li>Understanding the genetic drivers of obesity progression is difficult in humans due to uncontrolled environmental variables. Pigs serve as premier translational models because their fat deposition and metabolic syndrome progression closely mirror human biology (Spurlock &amp; Gabler, 2008; Litten-Brown et al., 2010). However, it is critical to identify which specific molecular pathways are truly orthologous to ensure results from porcine studies can be accurately applied to human clinical targets.</li>
-</ul>
-</section>
-<section id="hypothesis" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="hypothesis"><span class="header-section-number">4</span> Hypothesis</h2>
+<section id="rationale" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Rationale</h1>
+<p>Understanding the genetic drivers of obesity progression is difficult in humans due to uncontrolled environmental variables. Pigs serve as premier translational models because their fat deposition and metabolic syndrome progression closely mirror human biology (Spurlock &amp; Gabler, 2008; Litten-Brown et al., 2010). However, it is critical to identify which specific molecular pathways are truly orthologous to ensure results from porcine studies can be accurately applied to human clinical targets.</p>
+<section id="hypothesis" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="hypothesis"><span class="header-section-number">3.1</span> Hypothesis</h2>
 <ul>
 <li>H₀ (Null): Adiposity status has no significant effect on the expression of the LEP pathway or inflammatory signaling in either pigs or humans.</li>
 <li>H₁ (Alternate): Increasing adiposity levels will trigger a concordant upregulation of LEP and functionally co-expressed genes (RETN, FABP4, PLIN1, CFD, NAMPT, SERPINE1, SOCS3) and a significant increase in inflammatory pathway activity in both species.</li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
