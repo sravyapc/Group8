@@ -370,73 +370,7 @@ ggplotly(p, tooltip = "text")
 ```
 
 
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
 
-library(readr)
-library(DESeq2)
-library(tidyverse)
-library(plotly)
-
-counts_data <- read_tsv("data/GSE162653_raw_counts_GRCh38.p13_NCBI.tsv")
-
-colData <- read.csv("data/GSE162653_sample_metadata.csv")
-
-rownames(colData) <- colData$GSM
-
-rownames(counts_data) <- counts_data$GeneID
-counts_data <- counts_data[, -1]
-
-counts_data <- as.data.frame(counts_data)
-counts_data[] <- lapply(counts_data, as.numeric)
-counts_data <- round(as.matrix(counts_data))
-
-colData <- colData[match(colnames(counts_data), rownames(colData)), ]
-
-dds <- DESeqDataSetFromMatrix(
-  countData = counts_data,
-  colData = colData,
-  design = ~ treatment.group
-)
-
-keep <- rowSums(counts(dds)) >= 10
-dds <- dds[keep, ]
-
-dds$treatment.group <- relevel(
-  dds$treatment.group,
-  ref = "Fish oil (3g/day 1.1g EPA + 0.8g DHA)"
-)
-
-vsd <- vst(dds, blind = FALSE)
-
-pca_data <- plotPCA(vsd, intgroup = "bmi.group", returnData = TRUE)
-
-percentVar <- round(100 * attr(pca_data, "percentVar"), 1)
-
-p <- ggplot(
-  pca_data,
-  aes(
-    x = PC1,
-    y = PC2,
-    color = bmi.group,
-    text = paste(
-      "Sample:", name,
-      "<br>BMI Group:", bmi.group,
-      "<br>PC1:", round(PC1, 2),
-      "<br>PC2:", round(PC2, 2)
-    )
-  )
-) +
-  geom_point(size = 4) +
-  xlab(paste0("PC1 (", percentVar[1], "%)")) +
-  ylab(paste0("PC2 (", percentVar[2], "%)")) +
-  theme_minimal() +
-  ggtitle("Human Dataset PCA by BMI Group")
-
-ggplotly(p, tooltip = "text")
-```
 
 
 
