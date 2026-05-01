@@ -1,25 +1,33 @@
 ---
-title: "Proposal"
+title: "Methods"
 ---
 
 ## Research question
 State your main question in 1–2 sentences. We are just using plain text here. For example Alcohol-associated liver disease is influenced by both genetic and
 environmental factors. In this project, we analyze publicly available transcriptomic data to evaluate...
 
-## Dataset(s)
-- Source:
-- Sample size:
-- Key variables:
-- License/usage notes:
+## Pipeline
+- Our workflow follows a structured parallel analysis of porcine and human transcriptomes:
+- Data Acquisition: Datasets were retrieved from the NCBI Gene Expression Omnibus: GSE61271 (Pig) and GSE162653 (Human).
+- Preprocessing: Human raw counts were processed using the DESeq2 vignette (Love et al., 2014). Pig data, provided as pre-normalized counts, was analyzed using the limma user guide (Ritchie et al., 2015).
+- Ortholog Mapping: Pig Ensembl IDs were converted to human gene symbols using biomaRt for cross-species compatibility.
+- Pathway Analysis: We employed GSVA to calculate enrichment scores for the MSigDB Hallmark Gene Set (Liberzon et al., 2015).
 
-## Planned analysis
-Describe your plan in bullets:
-- Cleaning/QC
-- Visualizations
-- Statistical/ML approach
-- How you’ll validate (train/test, CV, sensitivity checks, etc.)
+```{mermaid}
+graph TD
+    A[GSE61271 Pig Data] --> B(limma Analysis)
+    C[GSE162653 Human Data] --> D(DESeq2 Analysis)
+    B --> E[biomaRt Ortholog Mapping]
+    D --> F[Gene Symbols]
+    E --> G[Comparative Pathway Analysis - GSVA]
+    F --> G
+    G --> H[Results: Conserved Inflammation vs. Divergent Metabolism]
+```
+## Datasets
+- GSE61271 Pig Data
+    + Sample Size: 
+    + Key Variables:
+- GSE162653 Human Data
+    + Sample Size: 
+    + Key Variables: 
 
-## Deliverables
-- Website sections
-- Key figures/tables
-- Any optional stretch goals

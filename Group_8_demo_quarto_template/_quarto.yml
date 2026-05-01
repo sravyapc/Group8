@@ -5,6 +5,7 @@ project:
 bibliography: references.bib
 
 website:
+  site-url: https://sravyapc.github.io/Group8/
   title: "BNFO 420 - Capstone"
   navbar:
     left:
