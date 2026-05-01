@@ -1,38 +1,24 @@
 [
   {
-    "objectID": "proposal.html",
-    "href": "proposal.html",
-    "title": "Methods",
+    "objectID": "team.html",
+    "href": "team.html",
+    "title": "Team",
     "section": "",
-    "text": "Our workflow follows a structured parallel analysis of porcine and human transcriptomes:\nData Acquisition: Datasets were retrieved from the NCBI Gene Expression Omnibus: GSE61271 (Pig) and GSE162653 (Human).\nPreprocessing: Human raw counts were processed using the DESeq2 vignette (Love et al., 2014). Pig data, provided as pre-normalized counts, was analyzed using the limma user guide (Ritchie et al., 2015).\nOrtholog Mapping: Pig Ensembl IDs were converted to human gene symbols using biomaRt for cross-species compatibility.\nPathway Analysis: We employed GSVA to calculate enrichment scores for the MSigDB Hallmark Gene Set (Liberzon et al., 2015).\n\n\n\n\n\n\ngraph TD\n    A[GSE61271 Pig Data] --&gt; B(limma Analysis)\n    C[GSE162653 Human Data] --&gt; D(DESeq2 Analysis)\n    B --&gt; E[biomaRt Ortholog Mapping]\n    D --&gt; F[Gene Symbols]\n    E --&gt; G[Comparative Pathway Analysis - GSVA]\n    F --&gt; G\n    G --&gt; H[Results: Conserved Inflammation vs. Divergent Metabolism]"
+    "text": "April Tian — PCA plots, differential analysis, pathway analysis\nBryonna Williams — Gene mapping, literature review\nSage Paz — Dataset procurement, website development\nSravya Chalamacharla — Heatmaps, website development"
   },
   {
-    "objectID": "proposal.html#research-question",
-    "href": "proposal.html#research-question",
-    "title": "Methods",
+    "objectID": "team.html#members",
+    "href": "team.html#members",
+    "title": "Team",
     "section": "",
-    "text": "State your main question in 1–2 sentences. We are just using plain text here. For example Alcohol-associated liver disease is influenced by both genetic and environmental factors. In this project, we analyze publicly available transcriptomic data to evaluate…"
+    "text": "April Tian — PCA plots, differential analysis, pathway analysis\nBryonna Williams — Gene mapping, literature review\nSage Paz — Dataset procurement, website development\nSravya Chalamacharla — Heatmaps, website development"
   },
   {
-    "objectID": "proposal.html#datasets",
-    "href": "proposal.html#datasets",
-    "title": "Methods",
-    "section": "2 Datasets",
-    "text": "2 Datasets\n\nGSE61271 Pig Data\n\nSample Size: 36 male and female pigs\nKey Variables: level of obesity, biological state\n\nGSE162653 Human Data\n\nSample Size: 20 human subjects\nKey Variables: type of food oil consumed"
-  },
-  {
-    "objectID": "proposal.html#planned-analysis",
-    "href": "proposal.html#planned-analysis",
-    "title": "Methods",
-    "section": "4 Planned analysis",
-    "text": "4 Planned analysis\nDescribe your plan in bullets: - Cleaning/QC - Visualizations - Statistical/ML approach - How you’ll validate (train/test, CV, sensitivity checks, etc.)"
-  },
-  {
-    "objectID": "proposal.html#deliverables",
-    "href": "proposal.html#deliverables",
-    "title": "Methods",
-    "section": "5 Deliverables",
-    "text": "5 Deliverables\n\nWebsite sections\nKey figures/tables\nAny optional stretch goals"
+    "objectID": "team.html#collaboration-rules-simple",
+    "href": "team.html#collaboration-rules-simple",
+    "title": "Team",
+    "section": "2 Collaboration rules (simple)",
+    "text": "2 Collaboration rules (simple)\n\nPull before you start work.\nCommit small changes with clear messages.\nOnly one person edits the same .qmd file at a time.\nUse Issues (optional) for tasks/bugs."
   },
   {
     "objectID": "limitations.html",
@@ -56,74 +42,18 @@
     "text": "2 Future Work\n\nFuture research will utilize single-cell RNA-sequencing (scRNA-seq), specifically targeting the Bama pig atlas (Chen et al., 2025), to differentiate between adipocyte-specific and macrophage-specific inflammatory signals. We could also plan on conducting a depot-specific comparison (visceral vs. subcutaneous fat) to determine if the metabolic divergence observed is consistent across different adipose locations."
   },
   {
-    "objectID": "results.html",
-    "href": "results.html",
-    "title": "Results",
-    "section": "",
-    "text": "This page presents the main results from the pig and human adiposity datasets. Figures are organized by dataset, followed by a cross-species comparison."
-  },
-  {
-    "objectID": "results.html#key-findings-draft",
-    "href": "results.html#key-findings-draft",
-    "title": "Results",
-    "section": "",
-    "text": "Add bullet points as you go."
-  },
-  {
-    "objectID": "results.html#figures",
-    "href": "results.html#figures",
-    "title": "Results",
-    "section": "0.2 Figures",
-    "text": "0.2 Figures"
-  },
-  {
-    "objectID": "team.html",
-    "href": "team.html",
-    "title": "Team",
-    "section": "",
-    "text": "April Tian — PCA plots, differential analysis, pathway analysis\nBryonna Williams — Gene mapping, literature review\nSage Paz — Dataset procurement, website development\nSravya Chalamacharla — Heatmaps, website development"
-  },
-  {
-    "objectID": "team.html#members",
-    "href": "team.html#members",
-    "title": "Team",
-    "section": "",
-    "text": "April Tian — PCA plots, differential analysis, pathway analysis\nBryonna Williams — Gene mapping, literature review\nSage Paz — Dataset procurement, website development\nSravya Chalamacharla — Heatmaps, website development"
-  },
-  {
-    "objectID": "team.html#collaboration-rules-simple",
-    "href": "team.html#collaboration-rules-simple",
-    "title": "Team",
-    "section": "2 Collaboration rules (simple)",
-    "text": "2 Collaboration rules (simple)\n\nPull before you start work.\nCommit small changes with clear messages.\nOnly one person edits the same .qmd file at a time.\nUse Issues (optional) for tasks/bugs."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Pig vs Human Genome Comparison",
     "section": "",
-    "text": "Obesity is a complex metabolic disorder characterized by excessive adipose tissue accumulation that extends beyond simple energy storage to include critical endocrine functions, such as the secretion of leptin to regulate appetite and systemic metabolism. The progression from leanness to obesity involves dynamic changes in fat cell size (hypertrophy), cell number (hyperplasia), and inflammatory status, all orchestrated by specific gene expression patterns. While human studies are essential, they are often confounded by lifestyle and genetic heterogeneity, making porcine (Sus scrofa) models an ideal translational alternative due to their remarkable metabolic and physiological similarities to humans.  In this study, we utilized two primary transcriptomic datasets: GSE61271 (RNA-sequencing of 36 pigs categorized by biological state: low, mean, and high weight) and GSE162653 (RNA-sequencing of 40 human white adipose tissue samples from normal-weight and obese individuals). Our primary objective was to perform a side-by-side comparative analysis of these datasets to determine if the directionality and magnitude of gene expression in the Leptin (LEP) pathway and associated inflammatory markers are conserved across species.  Our pipeline integrated DESeq2 for human raw count analysis and limma for normalized pig data, with cross-species ortholog mapping performed via biomaRt. While individual gene-level results showed significant divergence—with humans exhibiting 108 differentially expressed genes (DEGs) compared to only 4 in pigs—pathway-level analysis via Gene Set Variation Analysis (GSVA) revealed striking conservation. Both species showed significant upregulation in inflammatory and immune pathways, specifically the Complement System and PI3K/AKT/MTOR signaling. However, a significant metabolic divergence was observed: metabolism-related pathways were upregulated in pigs but downregulated in humans. These findings suggest that while the inflammatory hallmark of obesity is highly conserved, the metabolic response may differ based on the timeline of obesity progression or evolutionary adaptations. This research highlights the utility and the limitations of the porcine model in translational metabolic studies."
+    "text": "Obesity is a complex metabolic disorder characterized by excessive adipose tissue accumulation that extends beyond simple energy storage to include critical endocrine functions, such as the secretion of leptin to regulate appetite and systemic metabolism. The progression from leanness to obesity involves dynamic changes in fat cell size (hypertrophy), cell number (hyperplasia), and inflammatory status, all orchestrated by specific gene expression patterns. While human studies are essential, they are often confounded by lifestyle and genetic heterogeneity, making porcine (Sus scrofa) models an ideal translational alternative due to their remarkable metabolic and physiological similarities to humans. In this study, we utilized two primary transcriptomic datasets: GSE61271 (RNA-sequencing of 36 pigs categorized by biological state: low, mean, and high weight) and GSE162653 (RNA-sequencing of 40 human white adipose tissue samples from normal-weight and obese individuals). Our primary objective was to perform a side-by-side comparative analysis of these datasets to determine if the directionality and magnitude of gene expression in the Leptin (LEP) pathway and associated inflammatory markers are conserved across species. Our pipeline integrated DESeq2 for human raw count analysis and limma for normalized pig data, with cross-species ortholog mapping performed via biomaRt. While individual gene-level results showed significant divergence—with humans exhibiting 108 differentially expressed genes (DEGs) compared to only 4 in pigs—pathway-level analysis via Gene Set Variation Analysis (GSVA) revealed striking conservation. Both species showed significant upregulation in inflammatory and immune pathways, specifically the Complement System and PI3K/AKT/MTOR signaling. However, a significant metabolic divergence was observed: metabolism-related pathways were upregulated in pigs but downregulated in humans. These findings suggest that while the inflammatory hallmark of obesity is highly conserved, the metabolic response may differ based on the timeline of obesity progression or evolutionary adaptations. This research highlights the utility and the limitations of the porcine model in translational metabolic studies."
   },
   {
     "objectID": "index.html#abstract",
     "href": "index.html#abstract",
     "title": "Pig vs Human Genome Comparison",
     "section": "",
-    "text": "Obesity is a complex metabolic disorder characterized by excessive adipose tissue accumulation that extends beyond simple energy storage to include critical endocrine functions, such as the secretion of leptin to regulate appetite and systemic metabolism. The progression from leanness to obesity involves dynamic changes in fat cell size (hypertrophy), cell number (hyperplasia), and inflammatory status, all orchestrated by specific gene expression patterns. While human studies are essential, they are often confounded by lifestyle and genetic heterogeneity, making porcine (Sus scrofa) models an ideal translational alternative due to their remarkable metabolic and physiological similarities to humans.\nIn this study, we utilized two primary transcriptomic datasets: GSE61271 (RNA-sequencing of 36 pigs categorized by biological state: low, mean, and high weight) and GSE162653 (RNA-sequencing of 40 human white adipose tissue samples from normal-weight and obese individuals). Our primary objective was to perform a side-by-side comparative analysis of these datasets to determine if the directionality and magnitude of gene expression in the Leptin (LEP) pathway and associated inflammatory markers are conserved across species.\nOur pipeline integrated DESeq2 for human raw count analysis and limma for normalized pig data, with cross-species ortholog mapping performed via biomaRt. While individual gene-level results showed significant divergence—with humans exhibiting 108 differentially expressed genes (DEGs) compared to only 4 in pigs—pathway-level analysis via Gene Set Variation Analysis (GSVA) revealed striking conservation. Both species showed significant upregulation in inflammatory and immune pathways, specifically the Complement System and PI3K/AKT/MTOR signaling. However, a significant metabolic divergence was observed: metabolism-related pathways were upregulated in pigs but downregulated in humans. These findings suggest that while the inflammatory hallmark of obesity is highly conserved, the metabolic response may differ based on the timeline of obesity progression or evolutionary adaptations. This research highlights the utility and the limitations of the porcine model in translational metabolic studies."
-  },
-  {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Pig vs Human Genome Comparison",
-    "section": "2 Introduction",
-    "text": "2 Introduction\n\nFind dataset(s)\nDefine outcome + predictors / variables\nExploratory analysis + QC\nMethod 1 (required)\nMethod 2 (optional/extension)\nFinal figures + interpretation\nLimitations + ethics + reproducibility notes"
-  },
-  {
-    "objectID": "index.html#where-to-find-things",
-    "href": "index.html#where-to-find-things",
-    "title": "Pig vs Human Genome Comparison",
-    "section": "3 Where to find things",
-    "text": "3 Where to find things\n\nScripts: scripts/\nData notes: data/README.md\nFigures: figures/\nCitations: references.bib"
+    "text": "Obesity is a complex metabolic disorder characterized by excessive adipose tissue accumulation that extends beyond simple energy storage to include critical endocrine functions, such as the secretion of leptin to regulate appetite and systemic metabolism. The progression from leanness to obesity involves dynamic changes in fat cell size (hypertrophy), cell number (hyperplasia), and inflammatory status, all orchestrated by specific gene expression patterns. While human studies are essential, they are often confounded by lifestyle and genetic heterogeneity, making porcine (Sus scrofa) models an ideal translational alternative due to their remarkable metabolic and physiological similarities to humans. In this study, we utilized two primary transcriptomic datasets: GSE61271 (RNA-sequencing of 36 pigs categorized by biological state: low, mean, and high weight) and GSE162653 (RNA-sequencing of 40 human white adipose tissue samples from normal-weight and obese individuals). Our primary objective was to perform a side-by-side comparative analysis of these datasets to determine if the directionality and magnitude of gene expression in the Leptin (LEP) pathway and associated inflammatory markers are conserved across species. Our pipeline integrated DESeq2 for human raw count analysis and limma for normalized pig data, with cross-species ortholog mapping performed via biomaRt. While individual gene-level results showed significant divergence—with humans exhibiting 108 differentially expressed genes (DEGs) compared to only 4 in pigs—pathway-level analysis via Gene Set Variation Analysis (GSVA) revealed striking conservation. Both species showed significant upregulation in inflammatory and immune pathways, specifically the Complement System and PI3K/AKT/MTOR signaling. However, a significant metabolic divergence was observed: metabolism-related pathways were upregulated in pigs but downregulated in humans. These findings suggest that while the inflammatory hallmark of obesity is highly conserved, the metabolic response may differ based on the timeline of obesity progression or evolutionary adaptations. This research highlights the utility and the limitations of the porcine model in translational metabolic studies."
   },
   {
     "objectID": "index.html#background-and-motivation",
@@ -143,43 +73,43 @@
     "objectID": "index.html#hypothesis",
     "href": "index.html#hypothesis",
     "title": "Pig vs Human Genome Comparison",
-    "section": "3.1 Hypothesis",
-    "text": "3.1 Hypothesis\n\nH₀ (Null): Adiposity status has no significant effect on the expression of the LEP pathway or inflammatory signaling in either pigs or humans.\nH₁ (Alternate): Increasing adiposity levels will trigger a concordant upregulation of LEP and functionally co-expressed genes (RETN, FABP4, PLIN1, CFD, NAMPT, SERPINE1, SOCS3) and a significant increase in inflammatory pathway activity in both species."
+    "section": "4 Hypothesis",
+    "text": "4 Hypothesis\n\nH₀ (Null): Adiposity status has no significant effect on the expression of the LEP pathway or inflammatory signaling in either pigs or humans.\nH₁ (Alternate): Increasing adiposity levels will trigger a concordant upregulation of LEP and functionally co-expressed genes (RETN, FABP4, PLIN1, CFD, NAMPT, SERPINE1, SOCS3) and a significant increase in inflammatory pathway activity in both species."
+  },
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "Methods",
+    "section": "",
+    "text": "State your main question in 1–2 sentences. We are just using plain text here. For example Alcohol-associated liver disease is influenced by both genetic and environmental factors. In this project, we analyze publicly available transcriptomic data to evaluate…"
+  },
+  {
+    "objectID": "proposal.html#research-question",
+    "href": "proposal.html#research-question",
+    "title": "Methods",
+    "section": "",
+    "text": "State your main question in 1–2 sentences. We are just using plain text here. For example Alcohol-associated liver disease is influenced by both genetic and environmental factors. In this project, we analyze publicly available transcriptomic data to evaluate…"
   },
   {
     "objectID": "proposal.html#pipeline",
     "href": "proposal.html#pipeline",
     "title": "Methods",
+    "section": "2 Pipeline",
+    "text": "2 Pipeline\n\nOur workflow follows a structured parallel analysis of porcine and human transcriptomes:\nData Acquisition: Datasets were retrieved from the NCBI Gene Expression Omnibus: GSE61271 (Pig) and GSE162653 (Human).\nPreprocessing: Human raw counts were processed using the DESeq2 vignette (Love et al., 2014). Pig data, provided as pre-normalized counts, was analyzed using the limma user guide (Ritchie et al., 2015).\nOrtholog Mapping: Pig Ensembl IDs were converted to human gene symbols using biomaRt for cross-species compatibility.\nPathway Analysis: We employed GSVA to calculate enrichment scores for the MSigDB Hallmark Gene Set (Liberzon et al., 2015).\n\n\ngraph TD\n    A[GSE61271 Pig Data] --&gt; B(limma Analysis)\n    C[GSE162653 Human Data] --&gt; D(DESeq2 Analysis)\n    B --&gt; E[biomaRt Ortholog Mapping]\n    D --&gt; F[Gene Symbols]\n    E --&gt; G[Comparative Pathway Analysis - GSVA]\n    F --&gt; G\n    G --&gt; H[Results: Conserved Inflammation vs. Divergent Metabolism]\n\n\n\n\ngraph TD\n    A[GSE61271 Pig Data] --&gt; B(limma Analysis)\n    C[GSE162653 Human Data] --&gt; D(DESeq2 Analysis)\n    B --&gt; E[biomaRt Ortholog Mapping]\n    D --&gt; F[Gene Symbols]\n    E --&gt; G[Comparative Pathway Analysis - GSVA]\n    F --&gt; G\n    G --&gt; H[Results: Conserved Inflammation vs. Divergent Metabolism]"
+  },
+  {
+    "objectID": "proposal.html#datasets",
+    "href": "proposal.html#datasets",
+    "title": "Methods",
+    "section": "3 Datasets",
+    "text": "3 Datasets\n\nGSE61271 Pig Data\n\nSample Size:\nKey Variables:\n\nGSE162653 Human Data\n\nSample Size:\nKey Variables:"
+  },
+  {
+    "objectID": "results.html",
+    "href": "results.html",
+    "title": "Results",
     "section": "",
-    "text": "Our workflow follows a structured parallel analysis of porcine and human transcriptomes:\nData Acquisition: Datasets were retrieved from the NCBI Gene Expression Omnibus: GSE61271 (Pig) and GSE162653 (Human).\nPreprocessing: Human raw counts were processed using the DESeq2 vignette (Love et al., 2014). Pig data, provided as pre-normalized counts, was analyzed using the limma user guide (Ritchie et al., 2015).\nOrtholog Mapping: Pig Ensembl IDs were converted to human gene symbols using biomaRt for cross-species compatibility.\nPathway Analysis: We employed GSVA to calculate enrichment scores for the MSigDB Hallmark Gene Set (Liberzon et al., 2015).\n\n\n\n\n\n\ngraph TD\n    A[GSE61271 Pig Data] --&gt; B(limma Analysis)\n    C[GSE162653 Human Data] --&gt; D(DESeq2 Analysis)\n    B --&gt; E[biomaRt Ortholog Mapping]\n    D --&gt; F[Gene Symbols]\n    E --&gt; G[Comparative Pathway Analysis - GSVA]\n    F --&gt; G\n    G --&gt; H[Results: Conserved Inflammation vs. Divergent Metabolism]"
-  },
-  {
-    "objectID": "results.html#hypothesis-driven-gene-trend-correlation",
-    "href": "results.html#hypothesis-driven-gene-trend-correlation",
-    "title": "Results",
-    "section": "1.1 Hypothesis-Driven Gene Trend Correlation",
-    "text": "1.1 Hypothesis-Driven Gene Trend Correlation\n\n\n\n\n\n\nBrief analysis: - Focuses on LEP, FABP4, etc. - Highlights biologically relevant expression patterns.\\ - Positive correlations → increasing with adiposity - Negative correlations → decreasing - Mixed results support partial hypothesis"
-  },
-  {
-    "objectID": "results.html#top-30-most-variable-genes",
-    "href": "results.html#top-30-most-variable-genes",
-    "title": "Results",
-    "section": "1.2 Top 30 Most Variable Genes",
-    "text": "1.2 Top 30 Most Variable Genes\n\n\n\n\n\n\nBrief analysis: - These genes show the highest variability across samples. - Clustering suggests grouping by adiposity levels."
-  },
-  {
-    "objectID": "results.html#heatmaps-by-biological-state",
-    "href": "results.html#heatmaps-by-biological-state",
-    "title": "Results",
-    "section": "1.3 Heatmaps by Biological State",
-    "text": "1.3 Heatmaps by Biological State\n\nLowMeanHigh\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBrief analysis: - Low vs High groups show distinct clustering patterns. - Some genes appear consistently upregulated in High adiposity.\n\n\n\nSignificant pathways in pigs"
-  },
-  {
-    "objectID": "results.html#cross-species-comparison",
-    "href": "results.html#cross-species-comparison",
-    "title": "Results",
-    "section": "2.1 Cross-species Comparison",
-    "text": "2.1 Cross-species Comparison\n\n\n\nVolcano plot of human differential expression"
+    "text": "This page presents the main results from the pig and human adiposity datasets. Figures are organized by dataset, followed by a cross-species comparison."
   },
   {
     "objectID": "results.html#pig-obesity-pca",
@@ -250,19 +180,5 @@
     "title": "Results",
     "section": "4.1 Human vs Pig Pathway Theme Concordance",
     "text": "4.1 Human vs Pig Pathway Theme Concordance\n\nFigure analysis: This bar graph compares pathway-level trends between the human and pig datasets. Inflammatory pathway activity appears shared across species, while metabolism-related differences may reflect differences in obesity timeline, since the human samples represent established obesity while the pig samples may reflect a more recent progression toward higher adiposity."
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "Works Cited",
-    "section": "",
-    "text": "CARMIL3 capping protein regulator and myosin 1 linker 3 [Homo sapiens (human)] - Gene - NCBI. (2026). Nih.gov. https://www.ncbi.nlm.nih.gov/gene/90668\nChen, Long & Tong, Xingyan & Wu, Yujie & Liu, Can & Tang, Chuang & Qi, Xu & Kong, Fanli & Li, Mingzhou & Jin, Long & Zeng, Bo. (2025). A dataset of single-cell transcriptomic atlas of Bama pig and potential marker genes across seven tissues. BMC Genomic Data. 26. 10.1186/s12863-025-01308-3.\nChen L, Tong X, Wu Y, Liu C et al. A dataset of single-cell transcriptomic atlas of Bama pig and potential marker genes across seven tissues. BMC Genom Data 2025 Mar 12;26(1):16. PMID: 40075302\nCho, H., Zhao, X., Hatori, M., Yu, R. T., Barish, G. D., Lam, M. T., Chong, L.-W., DiTacchio, L., Atkins, A. R., Glass, C. K., Liddle, C., Auwerx, J., Downes, M., Panda, S., & Evans, R. M. (2012). Regulation of circadian behaviour and metabolism by REV-ERB-α and REV-ERB-β. Nature, 485(7396), 123–127. https://doi.org/10.1038/nature11048\nFisk HL, Childs CE, Miles EA, Ayres R et al. Dysregulation of endocannabinoid concentrations in human subcutaneous adipose tissue in obesity and modulation by omega-3 polyunsaturated fatty acids. Clin Sci (Lond) 2021 Jan 15;135(1):185-200. PMID: 33393630\nFisk HL, Childs CE, Miles EA, Ayres R et al. Modification of subcutaneous white adipose tissue inflammation by omega-3 fatty acids is limited in human obesity-a double blind, randomised clinical trial. EBioMedicine 2022 Mar;77:103909. PMID: 35247847\nGene - OXA1L. (2016). Maayanlab.cloud; Harmonizome. https://maayanlab.cloud/Harmonizome/gene/OXA1L\nKogelman LJ, Cirera S, Zhernakova DV, Fredholm M et al. Identification of co-expression gene networks, regulatory genes and pathways for obesity based on adipose tissue RNA Sequencing in a porcine model. BMC Med Genomics 2014 Sep 30;7:57. PMID: 25270054\nKogelman LJ, Zhernakova DV, Westra HJ, Cirera S et al. An integrative systems genetics approach reveals potential causal genes and pathways related to obesity. Genome Med 2015 Oct 20;7:105. PMID: 26482556\nLitten-Brown, J. C., Corson, A. M., & Clarke, L. (2010). Porcine models for the metabolic syndrome, digestive and bone disorders: a general overview. Animal : an international journal of animal bioscience, 4(6), 899–920. https://doi.org/10.1017/S1751731110000200\nLiberzon, A., Birger, C., Thorvaldsdóttir, H., Ghandi, M., Mesirov, Jill P., & Tamayo, P. (2015). The Molecular Signatures Database Hallmark Gene Set Collection. Cell Systems, 1(6), 417–425. https://doi.org/10.1016/j.cels.2015.12.004\nLu, Y.-H., Olof Stefan Dallner, Kivanc Birsoy, Gulya Fayzikhodjaeva, & Friedman, J. M. (2015). Nuclear Factor-Y is an adipogenic factor that regulates leptin gene expression. Molecular Metabolism, 4(5), 392–405. https://doi.org/10.1016/j.molmet.2015.02.002\nManna, P., & Jain, S. K. (2015). Obesity, Oxidative Stress, Adipose Tissue Dysfunction, and the Associated Health Risks: Causes and Therapeutic Strategies. Metabolic Syndrome and Related Disorders, 13(10), 423–444. https://doi.org/10.1089/met.2015.0095\nOstedgaard, L. S., Price, M. P., Whitworth, K. M., Abou Alaiwa, M. H., Fischer, A. J., Warrier, A., Samuel, M., Spate, L. D., Allen, P. D., Hilkin, B. M., Romano Ibarra, G. S., Ortiz Bezara, M. E., Goodell, B. J., Mather, S. E., Powers, L. S., Stroik, M. R., Gansemer, N. D., Hippee, C. E., Zarei, K., & Goeken, J. A. (2020). Lack of airway submucosal glands impairs respiratory host defenses. ELife, 9, e59653. https://doi.org/10.7554/eLife.59653\nSavova, M. S., Mihaylova, L. V., Tews, D., Wabitsch, M., & Georgiev, M. I. (2023). Targeting PI3K/AKT signaling pathway in obesity. Biomedicine & Pharmacotherapy, 159, 114244. https://doi.org/10.1016/j.biopha.2023.114244\nSpurlock, M. E., & Gabler, N. K. (2008). The development of porcine models of obesity and the metabolic syndrome. The Journal of nutrition, 138(2), 397–402. https://doi.org/10.1093/jn/138.2.397\nTuggle, C. K., Wang, Y., & Couture, O. (2007). Advances in swine transcriptomics. International journal of biological sciences, 3(3), 132–152. https://doi.org/10.7150/ijbs.3.132\nWen, X., Zhang, B., Wu, B., Xiao, H., Li, Z., Li, R., Xu, X., & Li, T. (2022). Signaling pathways in obesity: mechanisms and therapeutic interventions. Signal Transduction and Targeted Therapy, 7(1). https://doi.org/10.1038/s41392-022-01149-x"
-  },
-  {
-    "objectID": "references.html#references",
-    "href": "references.html#references",
-    "title": "Works Cited",
-    "section": "",
-    "text": "CARMIL3 capping protein regulator and myosin 1 linker 3 [Homo sapiens (human)] - Gene - NCBI. (2026). Nih.gov. https://www.ncbi.nlm.nih.gov/gene/90668\nChen, Long & Tong, Xingyan & Wu, Yujie & Liu, Can & Tang, Chuang & Qi, Xu & Kong, Fanli & Li, Mingzhou & Jin, Long & Zeng, Bo. (2025). A dataset of single-cell transcriptomic atlas of Bama pig and potential marker genes across seven tissues. BMC Genomic Data. 26. 10.1186/s12863-025-01308-3.\nChen L, Tong X, Wu Y, Liu C et al. A dataset of single-cell transcriptomic atlas of Bama pig and potential marker genes across seven tissues. BMC Genom Data 2025 Mar 12;26(1):16. PMID: 40075302\nCho, H., Zhao, X., Hatori, M., Yu, R. T., Barish, G. D., Lam, M. T., Chong, L.-W., DiTacchio, L., Atkins, A. R., Glass, C. K., Liddle, C., Auwerx, J., Downes, M., Panda, S., & Evans, R. M. (2012). Regulation of circadian behaviour and metabolism by REV-ERB-α and REV-ERB-β. Nature, 485(7396), 123–127. https://doi.org/10.1038/nature11048\nFisk HL, Childs CE, Miles EA, Ayres R et al. Dysregulation of endocannabinoid concentrations in human subcutaneous adipose tissue in obesity and modulation by omega-3 polyunsaturated fatty acids. Clin Sci (Lond) 2021 Jan 15;135(1):185-200. PMID: 33393630\nFisk HL, Childs CE, Miles EA, Ayres R et al. Modification of subcutaneous white adipose tissue inflammation by omega-3 fatty acids is limited in human obesity-a double blind, randomised clinical trial. EBioMedicine 2022 Mar;77:103909. PMID: 35247847\nGene - OXA1L. (2016). Maayanlab.cloud; Harmonizome. https://maayanlab.cloud/Harmonizome/gene/OXA1L\nKogelman LJ, Cirera S, Zhernakova DV, Fredholm M et al. Identification of co-expression gene networks, regulatory genes and pathways for obesity based on adipose tissue RNA Sequencing in a porcine model. BMC Med Genomics 2014 Sep 30;7:57. PMID: 25270054\nKogelman LJ, Zhernakova DV, Westra HJ, Cirera S et al. An integrative systems genetics approach reveals potential causal genes and pathways related to obesity. Genome Med 2015 Oct 20;7:105. PMID: 26482556\nLitten-Brown, J. C., Corson, A. M., & Clarke, L. (2010). Porcine models for the metabolic syndrome, digestive and bone disorders: a general overview. Animal : an international journal of animal bioscience, 4(6), 899–920. https://doi.org/10.1017/S1751731110000200\nLiberzon, A., Birger, C., Thorvaldsdóttir, H., Ghandi, M., Mesirov, Jill P., & Tamayo, P. (2015). The Molecular Signatures Database Hallmark Gene Set Collection. Cell Systems, 1(6), 417–425. https://doi.org/10.1016/j.cels.2015.12.004\nLu, Y.-H., Olof Stefan Dallner, Kivanc Birsoy, Gulya Fayzikhodjaeva, & Friedman, J. M. (2015). Nuclear Factor-Y is an adipogenic factor that regulates leptin gene expression. Molecular Metabolism, 4(5), 392–405. https://doi.org/10.1016/j.molmet.2015.02.002\nManna, P., & Jain, S. K. (2015). Obesity, Oxidative Stress, Adipose Tissue Dysfunction, and the Associated Health Risks: Causes and Therapeutic Strategies. Metabolic Syndrome and Related Disorders, 13(10), 423–444. https://doi.org/10.1089/met.2015.0095\nOstedgaard, L. S., Price, M. P., Whitworth, K. M., Abou Alaiwa, M. H., Fischer, A. J., Warrier, A., Samuel, M., Spate, L. D., Allen, P. D., Hilkin, B. M., Romano Ibarra, G. S., Ortiz Bezara, M. E., Goodell, B. J., Mather, S. E., Powers, L. S., Stroik, M. R., Gansemer, N. D., Hippee, C. E., Zarei, K., & Goeken, J. A. (2020). Lack of airway submucosal glands impairs respiratory host defenses. ELife, 9, e59653. https://doi.org/10.7554/eLife.59653\nSavova, M. S., Mihaylova, L. V., Tews, D., Wabitsch, M., & Georgiev, M. I. (2023). Targeting PI3K/AKT signaling pathway in obesity. Biomedicine & Pharmacotherapy, 159, 114244. https://doi.org/10.1016/j.biopha.2023.114244\nSpurlock, M. E., & Gabler, N. K. (2008). The development of porcine models of obesity and the metabolic syndrome. The Journal of nutrition, 138(2), 397–402. https://doi.org/10.1093/jn/138.2.397\nTuggle, C. K., Wang, Y., & Couture, O. (2007). Advances in swine transcriptomics. International journal of biological sciences, 3(3), 132–152. https://doi.org/10.7150/ijbs.3.132\nWen, X., Zhang, B., Wu, B., Xiao, H., Li, Z., Li, R., Xu, X., & Li, T. (2022). Signaling pathways in obesity: mechanisms and therapeutic interventions. Signal Transduction and Targeted Therapy, 7(1). https://doi.org/10.1038/s41392-022-01149-x"
   }
 ]
