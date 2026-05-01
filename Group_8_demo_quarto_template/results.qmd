@@ -326,6 +326,9 @@ mode(counts) <- "numeric"
 
 metadata <- read.csv("data/GSE61271_sample_metadata.csv")
 
+colnames(counts) <- trimws(colnames(counts))
+metadata$geo_accession <- trimws(metadata$geo_accession)
+
 metadata2 <- metadata[match(colnames(counts), metadata$geo_accession), ]
 
 gene_var <- apply(counts, 1, var, na.rm = TRUE)
@@ -340,20 +343,20 @@ pca_var_perc <- round(100 * pca_var / sum(pca_var), 1)
 pca_df <- data.frame(
   PC1 = pca_res$x[, 1],
   PC2 = pca_res$x[, 2],
-  BiologicalState = metadata2$biological_state,
+  Obesity = factor(metadata2$biological_state, levels = c("Low", "Mean", "High")),
   Sex = metadata2$Sex,
   Sample = metadata2$geo_accession
 )
 
-p1 <- ggplot(
+p <- ggplot(
   pca_df,
   aes(
     x = PC1,
     y = PC2,
-    color = BiologicalState,
+    color = Obesity,
     text = paste(
       "Sample:", Sample,
-      "<br>Biological State:", BiologicalState,
+      "<br>Obesity:", Obesity,
       "<br>Sex:", Sex,
       "<br>PC1:", round(PC1, 2),
       "<br>PC2:", round(PC2, 2)
@@ -364,39 +367,80 @@ p1 <- ggplot(
   xlab(paste0("PC1 (", pca_var_perc[1], "%)")) +
   ylab(paste0("PC2 (", pca_var_perc[2], "%)")) +
   theme_minimal() +
-  ggtitle("PCA of Pig RNA-seq Samples by Biological State")
+  ggtitle("PCA of RNA-seq Samples by Obesity Group")
 
-ggplotly(p1, tooltip = "text")
+ggplotly(p, tooltip = "text")
 ```
+
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 
-p2 <- ggplot(
-  pca_df,
+library(readr)
+library(DESeq2)
+library(tidyverse)
+library(plotly)
+
+counts_data <- read_tsv("data/GSE162653_raw_counts_GRCh38.p13_NCBI.tsv")
+
+colData <- read.csv("data/GSE162653_sample_metadata.csv")
+
+rownames(colData) <- colData$GSM
+
+rownames(counts_data) <- counts_data$GeneID
+counts_data <- counts_data[, -1]
+
+counts_data <- as.data.frame(counts_data)
+counts_data[] <- lapply(counts_data, as.numeric)
+counts_data <- round(as.matrix(counts_data))
+
+colData <- colData[match(colnames(counts_data), rownames(colData)), ]
+
+dds <- DESeqDataSetFromMatrix(
+  countData = counts_data,
+  colData = colData,
+  design = ~ treatment.group
+)
+
+keep <- rowSums(counts(dds)) >= 10
+dds <- dds[keep, ]
+
+dds$treatment.group <- relevel(
+  dds$treatment.group,
+  ref = "Fish oil (3g/day 1.1g EPA + 0.8g DHA)"
+)
+
+vsd <- vst(dds, blind = FALSE)
+
+pca_data <- plotPCA(vsd, intgroup = "bmi.group", returnData = TRUE)
+
+percentVar <- round(100 * attr(pca_data, "percentVar"), 1)
+
+p <- ggplot(
+  pca_data,
   aes(
     x = PC1,
     y = PC2,
-    color = Sex,
+    color = bmi.group,
     text = paste(
-      "Sample:", Sample,
-      "<br>Biological State:", BiologicalState,
-      "<br>Sex:", Sex,
+      "Sample:", name,
+      "<br>BMI Group:", bmi.group,
       "<br>PC1:", round(PC1, 2),
       "<br>PC2:", round(PC2, 2)
     )
   )
 ) +
   geom_point(size = 4) +
-  xlab(paste0("PC1 (", pca_var_perc[1], "%)")) +
-  ylab(paste0("PC2 (", pca_var_perc[2], "%)")) +
+  xlab(paste0("PC1 (", percentVar[1], "%)")) +
+  ylab(paste0("PC2 (", percentVar[2], "%)")) +
   theme_minimal() +
-  ggtitle("PCA of Pig RNA-seq Samples Colored by Sex")
+  ggtitle("Human Dataset PCA by BMI Group")
 
-ggplotly(p2, tooltip = "text")
+ggplotly(p, tooltip = "text")
 ```
+
 
 
 
