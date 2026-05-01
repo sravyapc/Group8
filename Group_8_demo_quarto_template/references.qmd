@@ -4,7 +4,9 @@ title: "Works Cited"
 
 ## References
 - CARMIL3 capping protein regulator and myosin 1 linker 3 [Homo sapiens (human)] - Gene - NCBI. (2026). Nih.gov. https://www.ncbi.nlm.nih.gov/gene/90668
+
 - Chen, Long & Tong, Xingyan & Wu, Yujie & Liu, Can & Tang, Chuang & Qi, Xu & Kong, Fanli & Li, Mingzhou & Jin, Long & Zeng, Bo. (2025). A dataset of single-cell transcriptomic atlas of Bama pig and potential marker genes across seven tissues. BMC Genomic Data. 26. 10.1186/s12863-025-01308-3. 
+
 - Chen L, Tong X, Wu Y, Liu C et al. A dataset of single-cell transcriptomic atlas of Bama pig and potential marker genes across seven tissues. BMC Genom Data 2025 Mar 12;26(1):16. PMID: 40075302
 
 - Cho, H., Zhao, X., Hatori, M., Yu, R. T., Barish, G. D., Lam, M. T., Chong, L.-W., DiTacchio, L., Atkins, A. R., Glass, C. K., Liddle, C., Auwerx, J., Downes, M., Panda, S., & Evans, R. M. (2012). Regulation of circadian behaviour and metabolism by REV-ERB-α and REV-ERB-β. Nature, 485(7396), 123–127. https://doi.org/10.1038/nature11048
